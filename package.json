@@ -1,0 +1,48 @@
+{
+  "name": "@eikko-ai/ui",
+  "version": "0.0.1",
+  "description": "React component library by eikko.ai",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "scripts": {
+    "clean": "rimraf dist .next",
+    "dev": "next dev --port 8080",
+    "build": "npm run build:tsc && BUILD=production rollup -c",
+    "build:tsc": "tsc --noEmit false --declaration true --outDir dist/esm --declarationDir dist/esm",
+    "build:watch": "tsc -w --declaration true --outDir dist/esm --declarationDir dist/esm && BUILD=development rollup -cw",
+    "build:next": "next build",
+    "prepare": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "tailwindcss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eikko-ai/eikko-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/eikko-ai/eikko-ui/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "homepage": "https://github.com/eikko-ai/eikko-ui#readme",
+  "author": "Nuno Freire",
+  "license": "MIT",
+  "files": [
+    "dist/cjs/*",
+    "dist/esm/*"
+  ],
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "next": "^10.0.2",
+    "prettier": "^2.1.2"
+  }
+}
