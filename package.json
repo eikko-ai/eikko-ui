@@ -9,9 +9,11 @@
     "clean": "rimraf dist .next",
     "dev": "next dev --port 8080",
     "build": "npm run build:tsc && BUILD=production rollup -c",
-    "build:tsc": "tsc --noEmit false --declaration true --outDir dist/esm --declarationDir dist/esm",
+    "build:ts": "tsc --noEmit false --declaration true --outDir dist/esm --declarationDir dist/esm",
+    "build:tailwind": "tailwindcss build styles/tailwind.pcss -o styles/main.css -c styles/tailwind.config.js",
     "build:watch": "tsc -w --declaration true --outDir dist/esm --declarationDir dist/esm && BUILD=development rollup -cw",
     "build:next": "next build",
+    "lint": "eslint .",
     "prepare": "npm run clean && npm run build"
   },
   "keywords": [
@@ -38,11 +40,28 @@
   ],
   "peerDependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "tailwindcss": "^2.0.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "autoprefixer": "^10.0.2",
+    "postcss": "^8.1.7"
+  },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-typescript": "^6.1.0",
+    "@types/node": "^14.14.9",
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
     "next": "^10.0.2",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "rollup": "^2.33.3",
+    "rollup-plugin-analyzer": "^3.3.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "tailwindcss": "^2.0.1"
   }
 }
