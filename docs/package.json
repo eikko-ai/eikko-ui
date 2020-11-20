@@ -1,0 +1,21 @@
+{
+  "name": "@eikko-ui/docs",
+  "version": "1.0.0",
+  "description": "eikko-ui docs",
+  "main": "index.js",
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --port 8080",
+    "test": ""
+  },
+  "author": "Nuno Freire",
+  "license": "MIT",
+  "dependencies": {
+    "autoprefixer": "^10.0.2",
+    "next": "^10.0.2",
+    "postcss": "^8.1.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "tailwindcss": "^2.0.1"
+  }
+}

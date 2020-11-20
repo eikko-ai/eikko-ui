@@ -82,5 +82,6 @@ node_modules/
 .tmp
 
 # Build
+build/
 dist/
 .next/
