@@ -4,14 +4,18 @@
   "description": "eikko.ai UI component library",
   "main": "postcss.config.js",
   "directories": {
-    "doc": "docs",
+    "docs": "docs",
     "lib": "lib"
   },
   "workspaces": [
     "docs",
     "lib"
   ],
-  "scripts": {},
+  "scripts": {
+    "docs:dev": "cd docs && npm run dev",
+    "docs:build": "cd docs && npm run build",
+    "lib:dev": "cd lib && npm run build:watch"
+  },
   "keywords": [
     "react",
     "components",
@@ -29,16 +33,5 @@
   },
   "homepage": "https://github.com/eikko-ai/eikko-ui#readme",
   "author": "Nuno Freire <nuno.freire@eikko.ai>",
-  "license": "MIT",
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^16.0.0",
-    "@rollup/plugin-json": "^4.1.0",
-    "@rollup/plugin-node-resolve": "^10.0.0",
-    "@rollup/plugin-typescript": "^6.1.0",
-    "prettier": "^2.1.2",
-    "rollup": "^2.33.3",
-    "rollup-plugin-analyzer": "^3.3.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.1.2"
-  }
+  "license": "MIT"
 }
