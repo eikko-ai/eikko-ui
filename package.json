@@ -12,6 +12,7 @@
     "lib"
   ],
   "scripts": {
+    "clean": "rimraf node_modules",
     "docs:dev": "cd docs && npm run dev",
     "docs:build": "cd docs && npm run build",
     "lib:dev": "cd lib && npm run build:watch"
@@ -33,5 +34,8 @@
   },
   "homepage": "https://github.com/eikko-ai/eikko-ui#readme",
   "author": "Nuno Freire <nuno.freire@eikko.ai>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
 }

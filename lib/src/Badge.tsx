@@ -10,7 +10,20 @@ const useStyle = () => {
 
   return {
     baseStyle: Badge.base,
-    successStyle: Badge.success,
+    variantStyle: {
+      standard: Badge.variant.standard,
+      dot: Badge.variant.dot,
+    },
+    intentStyle: {
+      primary: Badge.intent.primary,
+      secondary: Badge.intent.secondary,
+      light: Badge.intent.light,
+      dark: Badge.intent.dark,
+      info: Badge.intent.info,
+      success: Badge.intent.success,
+      warning: Badge.intent.warning,
+      danger: Badge.intent.danger,
+    },
   }
 }
 
@@ -44,20 +57,27 @@ export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
   (props: BadgeProps, ref: any) => {
-    const { children, className, variant = 'standard', count = 0, max = 99, ...rest } = props
+    const {
+      children,
+      className,
+      variant = 'standard',
+      intent = 'dark',
+      count = 0,
+      max = 99,
+      ...rest
+    } = props
 
     let displayValue = ''
     if (variant !== 'dot') {
       displayValue = count > max ? `${max}+` : count.toString()
     }
 
-    const { baseStyle, successStyle } = useStyle()
-    const cls = cx('Badge', className, baseStyle)
+    const { baseStyle, variantStyle, intentStyle } = useStyle()
 
     return (
-      <span ref={ref} className={cls}>
+      <span className={cx('Badge', className, baseStyle)} ref={ref} {...rest}>
         {children}
-        <span>{displayValue}</span>
+        <span className={cx(variantStyle[variant], intentStyle[intent])}>{displayValue}</span>
       </span>
     )
   }

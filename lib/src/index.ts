@@ -1,6 +1,6 @@
 import './styles/main.css'
 
-// export * from './theme'
+export * from './theme'
 
 // Components
 export * from './Badge'

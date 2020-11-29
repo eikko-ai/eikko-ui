@@ -1,8 +1,19 @@
 export default {
   base: 'inline-flex px-2 text-xs font-medium leading-5 rounded-full',
-  success: 'text-green-700 bg-green-100 dark:bg-green-700 dark:text-green-100',
-  danger: 'text-red-700 bg-red-100 dark:text-red-100 dark:bg-red-700',
-  warning: 'text-orange-700 bg-orange-100 dark:text-white dark:bg-orange-600',
-  neutral: 'text-gray-700 bg-gray-100 dark:text-gray-100 dark:bg-gray-700',
-  primary: 'text-purple-700 bg-purple-100 dark:text-white dark:bg-purple-600',
+  variant: {
+    standard:
+      'h-5 py-0 px-1 absolute flex flex-row flex-wrap justify-center items-center font-semibold text-xs leading-none rounded-full select-none z-10',
+    dot:
+      'h-3 w-3 p-0 absolute flex flex-row flex-wrap justify-center items-center font-semibold text-xs leading-none rounded-full select-none z-10',
+  },
+  intent: {
+    primary: '',
+    secondary: '',
+    light: '',
+    dark: 'bg-gray-800',
+    info: '',
+    success: '',
+    warning: '',
+    danger: '',
+  },
 }

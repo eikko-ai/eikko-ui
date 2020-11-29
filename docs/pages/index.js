@@ -4,9 +4,8 @@ import { Badge } from '@eikko-ui/lib'
 
 export default function HomePage() {
   return (
-    // <div>
-    //   <Badge>Badge</Badge>
-    // </div>
-    <div>Hello</div>
+    <div>
+      <Badge>This is badge!</Badge>
+    </div>
   )
 }
