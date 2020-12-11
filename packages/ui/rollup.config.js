@@ -14,8 +14,9 @@ const config = {
   extensions: ['.ts', '.tsx']
 }
 
-const globals = {}
-const external = [...Object.keys(globals), ...Object.keys(pkg.peerDependencies || {})]
+const globals = ['preact']
+
+const external = [...globals, ...Object.keys(pkg.peerDependencies || {}, ...[/@babel\/runtime/])]
 
 const plugins = [
   resolve({ extensions: config.extensions }),
@@ -23,6 +24,7 @@ const plugins = [
   json(),
   babel({
     extensions: config.extensions,
+    babelHelpers: 'runtime',
     include: ['src/**/*'],
     exclude: 'node_modules/**'
   }),
