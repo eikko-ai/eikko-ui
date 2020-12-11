@@ -2,24 +2,24 @@
   "compilerOptions": {
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
     "esModuleInterop": true,
+    "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "pretty": true,
     "resolveJsonModule": true,
-    "rootDir": "src",
-    "skipLibCheck": true,
     "strict": true,
     "strictNullChecks": true,
-    "target": "es5",
-    "isolatedModules": true,
-    "noEmit": true
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "emitDeclarationOnly": true,
+    "isolatedModules": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "stories", "docs", "tests", ".next"]
+  "include": ["src/**/*.tsx", "types/*.ts", "src/index.ts"],
+  "exclude": ["node_modules", "dist", "stories", "docs", "tests"]
 }

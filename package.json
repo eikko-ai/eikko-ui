@@ -1,41 +1,35 @@
 {
-  "name": "eikko-ui",
+  "name": "kai",
   "version": "0.0.1",
-  "description": "eikko.ai UI component library",
-  "main": "postcss.config.js",
-  "directories": {
-    "docs": "docs",
-    "lib": "lib"
-  },
+  "description": "Kai UI component library",
   "workspaces": [
-    "docs",
-    "lib"
+    "packages/*"
   ],
   "scripts": {
-    "clean": "rimraf node_modules",
-    "docs:dev": "cd docs && npm run dev",
-    "docs:build": "cd docs && npm run build",
-    "lib:dev": "cd lib && npm run build:watch"
+    "clean": "",
+    "build": "",
+    "start": "cd packages/components && npm run dev"
   },
   "keywords": [
-    "react",
+    "eikko",
+    "ui",
     "components",
+    "react",
+    "preact",
     "tailwindcss"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eikko-ai/eikko-ui.git"
+    "url": "git+https://github.com/eikko-ai/kai.git"
   },
   "bugs": {
-    "url": "https://github.com/eikko-ai/eikko-ui/issues"
+    "url": "https://github.com/eikko-ai/kai/issues"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "homepage": "https://github.com/eikko-ai/eikko-ui#readme",
+  "homepage": "https://github.com/eikko-ai/kai#readme",
   "author": "Nuno Freire <nuno.freire@eikko.ai>",
   "license": "MIT",
   "devDependencies": {
-    "rimraf": "^3.0.2"
+    "prettier": "2.1.2",
+    "rimraf": "3.0.2"
   }
 }

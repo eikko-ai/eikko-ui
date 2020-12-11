@@ -1,12 +1,12 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: [],
-  darkMode: 'media',
+  purge: ['./packages/**/*.jsx', './packages/**/*.tsx'],
+  // darkMode: 'media',
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans]
       },
       colors: {
         primary: {
@@ -19,7 +19,7 @@ module.exports = {
           600: '#057a55',
           700: '#046c4e',
           800: '#03543f',
-          900: '#014737',
+          900: '#014737'
         },
         secondary: {
           50: '#fafafa',
@@ -31,13 +31,13 @@ module.exports = {
           600: '#434343',
           700: '#242424',
           800: '#121212',
-          900: '#0d0d0d',
-        },
-      },
-    },
+          900: '#0d0d0d'
+        }
+      }
+    }
   },
   variants: {
-    extend: {},
+    extend: {}
   },
-  plugins: [],
+  plugins: []
 }
