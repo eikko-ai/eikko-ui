@@ -7,8 +7,9 @@
   ],
   "scripts": {
     "clean": "",
-    "build": "",
-    "start": "cd packages/components && npm run dev"
+    "build:ui": "cd packages/ui && npm run build",
+    "build:docs": "cd packages/docs && npm run build",
+    "start": "cd packages/docs && npm start"
   },
   "keywords": [
     "eikko",
@@ -31,5 +32,9 @@
   "devDependencies": {
     "prettier": "2.1.2",
     "rimraf": "3.0.2"
+  },
+  "dependencies": {
+    "preact-iso": "^0.2.0",
+    "wmr": "^1.0.0"
   }
 }
