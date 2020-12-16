@@ -14,11 +14,13 @@
     }
   },
   "scripts": {
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
     "build:ts": "tsc",
     "build:js": "BUILD=production rollup -c",
     "build": "npm run build:ts && npm run build:js",
+    "watch:ts": "tsc --watch",
+    "watch:js": "rollup -c --watch",
+    "watch": "npm run watch:ts & npm run watch:js",
+    "dev": "npm run watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },

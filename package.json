@@ -16,7 +16,7 @@
     "clean": "rimraf node_modules",
     "build:ui": "cd packages/ui && npm run build",
     "build:docs": "cd packages/docs && npm run build",
-    "start": "cd packages/docs && npm run dev"
+    "dev": "cd packages/ui && npm run dev & cd packages/docs && npm run dev"
   },
   "keywords": [
     "eikko",

@@ -45,7 +45,7 @@ type types = {
 }
 
 const Button = styled.button(({ isPrimary, isSecondary, isSmall }: types) => [
-  tw`text-lg px-8 py-2 rounded focus:outline-none`
+  tw`text-lg px-4 py-2 rounded focus:outline-none`
 ])
 
 export default Button
