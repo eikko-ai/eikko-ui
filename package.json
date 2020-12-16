@@ -1,12 +1,19 @@
 {
-  "name": "kai",
-  "version": "0.0.1",
+  "name": "@kai/monorepo",
+  "private": true,
+  "version": "1.0.0",
   "description": "Kai UI component library",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/@tailwindcss",
+      "**/@tailwindcss/**"
+    ]
+  },
   "scripts": {
-    "clean": "",
+    "clean": "rimraf node_modules",
     "build:ui": "cd packages/ui && npm run build",
     "build:docs": "cd packages/docs && npm run build",
     "start": "cd packages/docs && npm start"
