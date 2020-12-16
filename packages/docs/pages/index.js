@@ -1,7 +1,10 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import { Button } from '@kai/ui'
 
 export default function Home() {
-  return <Button>Hello!!</Button>
+  return (
+    <div className="p-8">
+      <Button>Hello!!</Button>
+    </div>
+  )
 }
