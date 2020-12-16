@@ -4,7 +4,7 @@ import { Button } from '@kai/ui'
 export default function Home() {
   return (
     <div className="p-8">
-      <Button>Hello!!</Button>
+      <Button>Click me!</Button>
     </div>
   )
 }
