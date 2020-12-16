@@ -39,9 +39,5 @@
   "devDependencies": {
     "prettier": "2.1.2",
     "rimraf": "3.0.2"
-  },
-  "dependencies": {
-    "preact-iso": "^0.2.0",
-    "wmr": "^1.0.0"
   }
 }
