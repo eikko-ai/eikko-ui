@@ -1,5 +1,5 @@
 {
-  "name": "@kai/docs",
+  "name": "@kai/sandbox",
   "version": "0.1.0",
   "private": true,
   "babelMacros": {
