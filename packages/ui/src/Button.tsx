@@ -1,3 +1,17 @@
+import tw, { styled } from 'twin.macro'
+
+type types = {
+  isPrimary?: Boolean
+  isSecondary?: Boolean
+  isSmall?: Boolean
+}
+
+const Button = styled.button(({ isPrimary, isSecondary, isSmall }: types) => [
+  tw`text-lg px-4 py-2 rounded-lg focus:outline-none border-2 border-primary-900 bg-primary-500 text-primary-50`
+])
+
+export default Button
+
 // import tw, { css, styled, theme } from 'twin.macro'
 
 // type types = {
@@ -35,17 +49,3 @@
 // ])
 
 // export default Button
-
-import tw, { styled } from 'twin.macro'
-
-type types = {
-  isPrimary?: Boolean
-  isSecondary?: Boolean
-  isSmall?: Boolean
-}
-
-const Button = styled.button(({ isPrimary, isSecondary, isSmall }: types) => [
-  tw`text-lg px-4 py-2 rounded-lg focus:outline-none border-2 border-primary-900 bg-primary-500 text-primary-50`
-])
-
-export default Button

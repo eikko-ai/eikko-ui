@@ -9,7 +9,9 @@
     }
   },
   "scripts": {
-    "dev": "parcel index.html --open",
+    "clean": "rm -rf .cache dist",
+    "prestart": "npm run clean",
+    "start": "parcel index.html --open",
     "build": "parcel build index.html"
   },
   "dependencies": {
