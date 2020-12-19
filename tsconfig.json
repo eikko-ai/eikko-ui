@@ -7,19 +7,19 @@
     "noImplicitReturns": true,
     "noEmitHelpers": true,
     "importHelpers": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "jsxFactory": "h",
     "target": "ES2017",
     "module": "ESNext",
     "moduleResolution": "node",
+    "isolatedModules": true,
     "pretty": true,
     "resolveJsonModule": true,
     "strict": true,
     "strictNullChecks": true,
     "skipLibCheck": true,
     "declaration": true,
-    "declarationDir": "dist/types",
-    "isolatedModules": true
+    "declarationDir": "dist/types"
   },
   "include": ["components/**/*.(ts|tsx)", "types/*.ts"],
   "exclude": ["node_modules", "dist", "stories", ".storybook", "tests"]
