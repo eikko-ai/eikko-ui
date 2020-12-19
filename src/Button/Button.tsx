@@ -10,7 +10,7 @@ const Button = styled.button(({ isPrimary, isSecondary, isSmall }: types) => [
   tw`text-lg px-4 py-2 bg-red-500 text-red-50`
 ])
 
-export default Button
+export { Button }
 
 // import tw, { css, styled, theme } from 'twin.macro'
 
