@@ -1,16 +1,24 @@
-import tw, { styled } from 'twin.macro'
+import { h } from 'preact'
 
-type types = {
-  isPrimary?: Boolean
-  isSecondary?: Boolean
-  isSmall?: Boolean
+interface ButtonProps {
+  children: React.ReactNode
 }
 
-const Button = styled.button(({ isPrimary, isSecondary, isSmall }: types) => [
-  tw`text-lg px-4 py-2 bg-red-500 text-red-50`
-])
+export const Button: React.FC<ButtonProps> = ({ children }) => <button>{children}</button>
 
-export { Button }
+// import tw, { styled } from 'twin.macro'
+
+// type types = {
+//   isPrimary?: Boolean
+//   isSecondary?: Boolean
+//   isSmall?: Boolean
+// }
+
+// const Button = styled.button(({ isPrimary, isSecondary, isSmall }: types) => [
+//   tw`text-lg px-4 py-2 bg-red-500 text-red-50`
+// ])
+
+// export { Button }
 
 // import tw, { css, styled, theme } from 'twin.macro'
 
