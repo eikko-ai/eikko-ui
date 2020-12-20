@@ -80,6 +80,7 @@ $RECYCLE.BIN/
 
 # Other
 .tmp
+.eslintcache
 
 # Build
 /build

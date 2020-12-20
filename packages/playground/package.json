@@ -31,13 +31,14 @@
     ]
   },
   "dependencies": {
+    "navi": "^0.14.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-navi": "^0.14.4",
     "react-scripts": "^4.0.1",
     "styled-components": "^5.2.1",
     "tailwindcss": "^2.0.2",
-    "twin.macro": "^2.0.7",
-    "universal-router": "^9.0.1"
+    "twin.macro": "^2.0.7"
   },
   "devDependencies": {
     "prettier": "^2.1.2"
