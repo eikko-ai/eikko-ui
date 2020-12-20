@@ -15,7 +15,7 @@
   "scripts": {
     "clean": "rimraf node_modules",
     "build": "cd packages/ui && npm run build",
-    "dev": "cd packages/components && npm run watch & cd packages/sandbox && npm run dev",
+    "dev": "cd packages/components && npm run watch & cd packages/playground && npm run start",
     "lint": "eslint . --ignore-path ./.gitignore",
     "lint:fix": "eslint . --fix --ignore-path ./.gitignore",
     "generate": "node ./scripts/generators/create-component"
@@ -25,7 +25,6 @@
     "ui",
     "components",
     "react",
-    "preact",
     "tailwindcss"
   ],
   "repository": {
