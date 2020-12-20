@@ -14,9 +14,9 @@ const config = {
   extensions: ['.ts', '.tsx']
 }
 
-const globals = ['preact']
+const globals = ['react']
 
-const external = [...globals, ...Object.keys(pkg.peerDependencies || {}, ...[/@babel\/runtime/])]
+const external = [...globals, ...Object.keys(pkg.peerDependencies || {})]
 
 const plugins = [
   resolve({ extensions: config.extensions }),

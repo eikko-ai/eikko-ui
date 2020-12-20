@@ -1,5 +1,6 @@
 {
   "presets": [
+    "@babel/preset-react",
     "@babel/preset-typescript",
     [
       "@babel/preset-env",
@@ -19,13 +20,7 @@
         "useESModules": true
       }
     ],
-    [
-      "@babel/plugin-transform-react-jsx",
-      {
-        "pragma": "h",
-        "pragmaFrag": "Fragment"
-      }
-    ],
+    "@babel/plugin-transform-react-jsx",
     "babel-plugin-macros"
   ]
 }
