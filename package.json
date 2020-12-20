@@ -26,6 +26,7 @@
     "watch:ts": "tsc --watch",
     "watch:js": "rollup -c --watch",
     "watch": "npm run watch:ts & npm run watch:js",
+    "dev": "npm run watch & cd .sandbox/ && npm run dev",
     "storybook": "start-storybook -p 6060",
     "storybook:export": "build-storybook",
     "lint": "eslint . --ignore-path ./.gitignore",
