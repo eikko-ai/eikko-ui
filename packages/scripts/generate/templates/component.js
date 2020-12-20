@@ -1,6 +1,6 @@
 module.exports = (componentName) => ({
   content: `
-import { h } from 'preact'
+import React from 'react'
 import tw, { css, styled, theme } from 'twin.macro'
 
 interface ${componentName}Props {
