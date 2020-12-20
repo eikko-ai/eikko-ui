@@ -38,6 +38,10 @@
   "homepage": "https://github.com/eikko-ai/kai#readme",
   "author": "Nuno Freire <nuno.freire@eikko.ai>",
   "license": "MIT",
+  "resolutions": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
   "devDependencies": {
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",

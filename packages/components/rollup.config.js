@@ -14,7 +14,7 @@ const config = {
   extensions: ['.ts', '.tsx']
 }
 
-const globals = ['react']
+const globals = ['react', 'react-dom', 'styled-components']
 
 const external = [...globals, ...Object.keys(pkg.peerDependencies || {})]
 
