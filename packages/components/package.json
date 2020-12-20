@@ -20,7 +20,7 @@
   },
   "scripts": {
     "clean": "rimraf node_modules dist",
-    "build:ts": "tsc --emitDeclarationOnly",
+    "build:ts": "tsc",
     "build:js": "BUILD=production rollup -c",
     "build": "npm run build:ts && npm run build:js",
     "watch:ts": "tsc --watch",

@@ -19,7 +19,8 @@
     "strictNullChecks": true,
     "skipLibCheck": true,
     "declaration": true,
-    "declarationDir": "dist/types"
+    "declarationDir": "dist/types",
+    "emitDeclarationOnly": true
   },
   "include": ["src/**/*.tsx", "types/*.ts"],
   "exclude": ["node_modules", "dist", "stories", ".storybook", "tests"]
