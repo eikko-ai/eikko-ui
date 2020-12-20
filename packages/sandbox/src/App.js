@@ -8,7 +8,7 @@ const App = () => (
     <div
       css={[
         tw`flex flex-col items-center justify-center h-screen`,
-        tw`bg-gradient-to-b from-primary-500 to-blue-100`
+        tw`bg-gradient-to-b from-gray-900 to-blue-200`
       ]}
     >
       <div tw="flex flex-col justify-center h-full space-y-5">
