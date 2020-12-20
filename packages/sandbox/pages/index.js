@@ -1,5 +1,7 @@
+import React from 'react'
 import tw from 'twin.macro'
-import { Button } from '../../components'
+import { Button } from '@kai/components'
+// import { Button } from '../../components'
 
 const App = () => (
   <div

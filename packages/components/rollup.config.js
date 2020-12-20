@@ -25,7 +25,7 @@ const plugins = [
   babel({
     extensions: config.extensions,
     babelHelpers: 'runtime',
-    include: ['components/**/*'],
+    include: ['src/**/*'],
     exclude: 'node_modules/**'
   }),
   analyze({ summaryOnly: true, limit: 10 }),
@@ -36,7 +36,7 @@ export default [
   {
     external,
     plugins,
-    input: 'components/index.ts',
+    input: 'src/index.ts',
     output: [
       {
         file: pkg.main,
