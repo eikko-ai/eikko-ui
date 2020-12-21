@@ -3,41 +3,100 @@ import 'twin.macro'
 
 export const Home = () => {
   return (
-    <section tw="text-gray-700 font-sans">
+    <section tw="h-screen bg-black text-white font-sans">
       <div tw="container px-5 py-24 mx-auto">
-        <div tw="flex flex-wrap w-full mb-20 flex-col items-center text-center">
-          <h1 tw="sm:text-3xl text-2xl font-medium mb-2 text-gray-900">Home</h1>
-          <p tw="lg:w-1/2 w-full leading-relaxed text-base text-gray-600">Playground for KaiUI</p>
-        </div>
-
         <div tw="md:flex flex-wrap -m-4">
           <div tw="xl:w-1/3 md:w-1/2 p-4">
-            <a tw="block border border-gray-600 p-6 rounded-lg bg-gray-50" href="/color">
-              <h2 tw="text-lg text-gray-900 font-medium mb-2">Colors</h2>
-              <p tw="leading-relaxed text-base text-gray-900">Colors, colors, colors...</p>
+            <a
+              tw="block border border-trueGray-800 bg-trueGray-900 p-6 rounded-lg hover:bg-red-700 transition-colors duration-500 ease-in-out"
+              href="/color"
+            >
+              <div tw="w-10 h-10 inline-flex items-center justify-center rounded-full bg-red-50 text-red-500 mb-4">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  tw="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h2 tw="text-lg text-gray-300 font-medium mb-2">Colors</h2>
+              <p tw="leading-relaxed text-base text-gray-300">Colors, colors, colors...</p>
             </a>
           </div>
 
           <div tw="xl:w-1/3 md:w-1/2 p-4">
-            <a tw="block border border-red-600 p-6 rounded-lg bg-red-50" href="/typography">
-              <h2 tw="text-lg text-red-900 font-medium mb-2">Typography</h2>
-              <p tw="leading-relaxed text-base text-red-900">
+            <a
+              tw="block border border-trueGray-800 bg-trueGray-900 p-6 rounded-lg hover:bg-yellow-700 transition-colors duration-500 ease-in-out"
+              href="/typography"
+            >
+              <div tw="w-10 h-10 inline-flex items-center justify-center rounded-full bg-yellow-50 text-yellow-500 mb-4">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  tw="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h2 tw="text-lg text-gray-300 font-medium mb-2">Typography</h2>
+              <p tw="leading-relaxed text-base text-gray-300">
                 Typography, typography, typography...
               </p>
             </a>
           </div>
 
           <div tw="xl:w-1/3 md:w-1/2 p-4">
-            <a tw="block border border-yellow-600 p-6 rounded-lg bg-yellow-50" href="/buttons">
-              <h2 tw="text-lg text-yellow-900 font-medium mb-2">Buttons</h2>
-              <p tw="leading-relaxed text-base text-yellow-900">Buttons, buttons, buttons...</p>
+            <a
+              tw="block border border-trueGray-800 bg-trueGray-900 p-6 rounded-lg hover:bg-blue-700 transition-colors duration-500 ease-in-out"
+              href="/buttons"
+            >
+              <div tw="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-50 text-blue-500 mb-4">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  tw="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h2 tw="text-lg text-gray-300 font-medium mb-2">Buttons</h2>
+              <p tw="leading-relaxed text-base text-gray-300">Buttons, buttons, buttons...</p>
             </a>
           </div>
 
           <div tw="xl:w-1/3 md:w-1/2 p-4">
-            <a tw="block border border-green-600 p-6 rounded-lg bg-green-50" href="/inputs">
-              <h2 tw="text-lg text-green-900 font-medium mb-2">Inputs</h2>
-              <p tw="leading-relaxed text-base text-green-900">Inputs, inputs, inputs...</p>
+            <a
+              tw="block border border-trueGray-800 bg-trueGray-900 p-6 rounded-lg hover:bg-teal-700 transition-colors duration-500 ease-in-out"
+              href="/inputs"
+            >
+              <div tw="w-10 h-10 inline-flex items-center justify-center rounded-full bg-teal-50 text-teal-500 mb-4">
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  tw="w-6 h-6"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                </svg>
+              </div>
+              <h2 tw="text-lg text-gray-300 font-medium mb-2">Inputs</h2>
+              <p tw="leading-relaxed text-base text-gray-300">Inputs, inputs, inputs...</p>
             </a>
           </div>
         </div>

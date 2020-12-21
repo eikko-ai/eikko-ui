@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   // darkMode: 'media',
@@ -31,7 +32,9 @@ module.exports = {
           700: '#242424',
           800: '#121212',
           900: '#0d0d0d'
-        }
+        },
+        trueGray: colors.trueGray,
+        teal: colors.teal
       }
     }
   },
