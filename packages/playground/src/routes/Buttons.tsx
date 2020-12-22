@@ -1,6 +1,6 @@
 import React from 'react'
 import 'twin.macro'
-// import { Button } from '@kai/components'
+import { Button } from '@kai/components'
 
 export const Buttons = () => {
   return (

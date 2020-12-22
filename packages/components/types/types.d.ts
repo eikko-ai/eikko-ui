@@ -19,7 +19,7 @@ declare module 'twin.macro' {
   const css: typeof cssImport | Interpolation
 }
 
-declare module 'preact' {
+declare module 'react' {
   // The css prop
   interface HTMLAttributes<T> extends DOMAttributes<T> {
     css?: CSSProp | Interpolation
