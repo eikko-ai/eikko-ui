@@ -1,23 +1,27 @@
 {
   "name": "@kai/playground",
-  "private": "true",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "private": true,
   "description": "Kai dev sandbox",
+  "author": "Nuno Freire",
   "babelMacros": {
     "twin": {
-      "config": "./tailwind.config.js",
       "preset": "styled-components"
     }
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write \"**/*.{js,jsx,ts, tsx,json,md}\""
   },
-  "author": "Nuno Freire",
-  "license": "MIT",
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -31,21 +35,26 @@
     ]
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "@types/styled-components": "^5.1.7",
     "navi": "^0.14.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-navi": "^0.14.4",
-    "react-scripts": "^4.0.1",
+    "react-scripts": "4.0.1",
     "styled-components": "^5.2.1",
     "tailwindcss": "^2.0.2",
-    "twin.macro": "^2.0.7"
+    "twin.macro": "^2.0.7",
+    "typescript": "^4.1.3",
+    "web-vitals": "^0.2.4"
   },
   "devDependencies": {
-    "@types/node": "^14.14.14",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@types/styled-components": "^5.1.7",
-    "prettier": "^2.1.2",
-    "typescript": "^4.1.3"
+    "prettier": "^2.1.2"
   }
 }
