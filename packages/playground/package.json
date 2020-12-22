@@ -14,7 +14,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\""
+    "format": "prettier --write \"**/*.{js,jsx,ts, tsx,json,md}\""
   },
   "author": "Nuno Freire",
   "license": "MIT",
@@ -41,6 +41,11 @@
     "twin.macro": "^2.0.7"
   },
   "devDependencies": {
-    "prettier": "^2.1.2"
+    "@types/node": "^14.14.14",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/styled-components": "^5.1.7",
+    "prettier": "^2.1.2",
+    "typescript": "^4.1.3"
   }
 }

@@ -1,9 +1,10 @@
 import React from 'react'
 import 'twin.macro'
+import { Card } from '../components/Card'
 
 export const Home = () => {
   return (
-    <section tw="h-screen bg-black text-white font-sans">
+    <section tw="h-screen bg-trueGray-900 text-white font-sans">
       <div tw="container px-5 py-24 mx-auto">
         <div tw="md:flex flex-wrap -m-4">
           <div tw="xl:w-1/3 md:w-1/2 p-4">
@@ -99,6 +100,8 @@ export const Home = () => {
               <p tw="leading-relaxed text-base text-gray-300">Inputs, inputs, inputs...</p>
             </a>
           </div>
+
+          <Card header="Inputs" />
         </div>
       </div>
     </section>

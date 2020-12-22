@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import { Router, View } from 'react-navi'
 import { GlobalStyles } from 'twin.macro'
-import { Header } from './Header'
+import { Header } from './components/Header'
 import routes from './routes'
 
 const App = () => (
