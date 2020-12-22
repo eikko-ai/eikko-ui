@@ -9,12 +9,15 @@
     ],
     "nohoist": [
       "**/@tailwindcss",
-      "**/@tailwindcss/**"
+      "**/@tailwindcss/**",
+      "**/twin.macro",
+      "**/postcss",
+      "**/postcss-**"
     ]
   },
   "scripts": {
     "clean": "rimraf node_modules",
-    "build": "cd packages/ui && npm run build",
+    "build": "cd packages/components && npm run build",
     "dev": "cd packages/components && npm run watch & cd packages/playground && npm run start",
     "lint": "eslint . --ignore-path ./.gitignore",
     "lint:fix": "eslint . --fix --ignore-path ./.gitignore",
@@ -47,7 +50,6 @@
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "postcss": "^8.1.8",
     "prettier": "^2.2.1",
     "rimraf": "3.0.2"
   }
