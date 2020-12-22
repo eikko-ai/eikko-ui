@@ -101,7 +101,13 @@ export const Home = () => {
             </a>
           </div>
 
-          <Card header="Inputs" />
+          <Card
+            header="Inputs"
+            text="Inputs, Inputs, Inputs"
+            link="/inputs"
+            color="orange"
+            icon={<svg></svg>}
+          />
         </div>
       </div>
     </section>

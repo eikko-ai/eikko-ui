@@ -22,6 +22,6 @@
     "declarationDir": "dist/types",
     "emitDeclarationOnly": true
   },
-  "include": ["src/**/*.tsx", "types/*.ts"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "types/*.ts"],
   "exclude": ["node_modules", "dist", "stories", ".storybook", "tests"]
 }

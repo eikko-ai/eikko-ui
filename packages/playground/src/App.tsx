@@ -7,9 +7,11 @@ import routes from './routes'
 const App = () => (
   <Router routes={routes}>
     <Suspense fallback={null}>
-      <GlobalStyles />
-      <Header />
-      <View />
+      <div className="App">
+        <GlobalStyles />
+        <Header />
+        <View />
+      </div>
     </Suspense>
   </Router>
 )
