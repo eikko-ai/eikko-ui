@@ -1,4 +1,4 @@
-module.exports = (componentName) => ({
+module.exports = (componentName: string) => ({
   content: `
 import React from 'react'
 import tw, { css, styled, theme } from 'twin.macro'

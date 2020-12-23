@@ -1,4 +1,4 @@
-module.exports = (componentName) => ({
+module.exports = (componentName: string) => ({
   content: `
 import { h } from 'preact'
 import ${componentName} from "./${componentName}";
