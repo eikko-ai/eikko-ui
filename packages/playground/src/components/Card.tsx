@@ -1,37 +1,40 @@
 import React from 'react'
-import 'twin.macro'
+import tw, { styled } from 'twin.macro'
+
+type CardColors = 'blue' | 'green' | 'red' | 'teal' | 'gray'
 
 interface CardProps {
   header: string
   text: string
   link: string
-  color: string
   icon: React.ReactNode
+  color?: CardColors
 }
 
-export const Card: React.FC<CardProps> = ({ header, text, link, color, icon }) => {
+const StyledCard = styled.a(({ color = 'gray' }: Partial<CardProps>) => [
+  tw`block border border-trueGray-700 bg-trueGray-800 p-6 rounded-lg transition-colors duration-500 ease-in-out`,
+
+  color === 'blue' && tw`hover:bg-blue-700`,
+  color === 'green' && tw`hover:bg-green-700`,
+  color === 'red' && tw`hover:bg-red-700`,
+  color === 'teal' && tw`hover:bg-teal-700`
+])
+
+const StyledIcon = styled.div(({ color = 'gray' }: Partial<CardProps>) => [
+  tw`w-10 h-10 inline-flex items-center justify-center rounded-full mb-4`,
+
+  color === 'blue' && tw`bg-blue-50 text-blue-500 `,
+  color === 'green' && tw`bg-green-50 text-green-500 `,
+  color === 'red' && tw`bg-red-50 text-red-500 `,
+  color === 'teal' && tw`bg-teal-50 text-teal-500 `
+])
+
+export const Card: React.FC<CardProps> = ({ header, text, link, icon, ...rest }) => {
   return (
-    <div tw="xl:w-1/3 md:w-1/2 p-4">
-      <a
-        tw="block border border-trueGray-800 bg-trueGray-900 p-6 rounded-lg hover:bg-blue-700 transition-colors duration-500 ease-in-out"
-        href={link}
-      >
-        <div tw="w-10 h-10 inline-flex items-center justify-center rounded-full bg-blue-50 text-blue-500 mb-4">
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            tw="w-6 h-6"
-            viewBox="0 0 24 24"
-          >
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-          </svg>
-        </div>
-        <h2 tw="text-lg text-gray-300 font-medium mb-2">{header}</h2>
-        <p tw="leading-relaxed text-base text-gray-300">{text}</p>
-      </a>
-    </div>
+    <StyledCard href={link} {...rest}>
+      <StyledIcon {...rest}>{icon}</StyledIcon>
+      <h2 tw="text-lg text-gray-300 font-medium mb-2">{header}</h2>
+      <p tw="leading-relaxed text-base text-gray-300">{text}</p>
+    </StyledCard>
   )
 }
