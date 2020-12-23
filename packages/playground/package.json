@@ -55,7 +55,6 @@
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
-    "prettier": "^2.1.2",
-    "postcss": "^8.2.1"
+    "prettier": "^2.1.2"
   }
 }
