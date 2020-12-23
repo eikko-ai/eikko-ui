@@ -1,7 +1,7 @@
 {
   "name": "@kai/monorepo",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
   "description": "Kai UI component library",
   "workspaces": {
     "packages": [
@@ -21,7 +21,7 @@
     "dev": "cd packages/components && npm run watch & cd packages/playground && npm run start",
     "lint": "eslint . --ignore-path ./.gitignore",
     "lint:fix": "eslint . --fix --ignore-path ./.gitignore",
-    "generate": "node ./scripts/generators/create-component"
+    "generate:component": "cd packages/scripts && npm run generate:component"
   },
   "keywords": [
     "eikko",
@@ -50,7 +50,8 @@
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "postcss": "^8.2.1",
     "prettier": "^2.2.1",
-    "rimraf": "3.0.2"
+    "rimraf": "^3.0.2"
   }
 }
