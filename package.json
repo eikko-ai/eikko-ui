@@ -11,8 +11,7 @@
       "**/@tailwindcss",
       "**/@tailwindcss/**",
       "**/twin.macro",
-      "**/postcss",
-      "**/postcss-**"
+      "**/postcss"
     ]
   },
   "scripts": {
