@@ -1,7 +1,7 @@
 module.exports = (componentName) => ({
   content: `
-import { h } from 'preact'
-import ${componentName} from "./${componentName}";
+import React from "react";
+import {${componentName}} from "./${componentName}";
 
 export default {
   title: "${componentName}"

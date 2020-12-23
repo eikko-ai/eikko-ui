@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 const chalk = require('chalk')
 const templates = require('./templates')
 
@@ -9,9 +10,9 @@ if (!componentName) {
   process.exit(1)
 }
 
-console.log('Creating Component Templates with name: ' + componentName)
+console.log(chalk.cyan('Creating Component Template: '), componentName)
 
-const componentDirectory = `./packages/components/src/${componentName}`
+const componentDirectory = `../components/src/${componentName}`
 
 if (fs.existsSync(componentDirectory)) {
   console.error(chalk.red(`Component ${componentName} already exists.`))
@@ -26,4 +27,8 @@ generatedTemplates.forEach((template) => {
   fs.writeFileSync(`${componentDirectory}/${componentName}${template.extension}`, template.content)
 })
 
-console.log(chalk.green('Successfully created component under: ' + componentDirectory))
+console.log(
+  chalk.green(
+    'Successfully created component under: ' + path.relative('../../', componentDirectory)
+  )
+)

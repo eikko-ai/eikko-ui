@@ -4,7 +4,7 @@ import React from 'react'
 import tw, { css, styled, theme } from 'twin.macro'
 
 interface ${componentName}Props {
-  children: React.ReactNode
+  foo: string
 }
 
 const ${componentName}: React.FC<${componentName}Props> = ({ foo }) => (
