@@ -2,5 +2,8 @@
   "name": "@kai/scripts",
   "private": true,
   "version": "1.0.0",
-  "scripts": {}
+  "scripts": {},
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
 }
