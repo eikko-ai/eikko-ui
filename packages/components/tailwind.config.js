@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
 
 module.exports = {
   // darkMode: 'media',
@@ -7,6 +8,7 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans]
       },
+      ringOpacity: ['hover', 'active'],
       colors: {
         primary: {
           50: '#f3faf7',
@@ -31,7 +33,35 @@ module.exports = {
           700: '#242424',
           800: '#121212',
           900: '#0d0d0d'
-        }
+        },
+        light: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717'
+        },
+        dark: {
+          50: '#fafafa',
+          100: '#f3f3f3',
+          200: '#e3e3e3',
+          300: '#c6c6c6',
+          400: '#9e9e9e',
+          500: '#6e6e6e',
+          600: '#434343',
+          700: '#242424',
+          800: '#121212',
+          900: '#0d0d0d'
+        },
+        info: colors.blue,
+        warning: colors.yellow,
+        success: colors.green,
+        danger: colors.red
       }
     }
   },
