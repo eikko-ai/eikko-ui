@@ -25,6 +25,10 @@ interface ButtonProps {
   isWide?: boolean
   /** If true, the button text will be in all caps. */
   isUppercase?: boolean
+  // /** The name of the icon to appear to the left of the button text. */
+  // leftIcon?: IconName
+  // /** The name of the icon to appear to the right of the button text. */
+  // rightIcon?: IconName
 }
 
 const sizeStyles = {
@@ -57,7 +61,7 @@ const variantIntentStyles = {
       focus:outline-none
       focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-gray-500`,
     dark: tw`
-    bg-gray-600 hover:bg-gray-700
+    bg-dark-800 hover:bg-dark-700
       focus:outline-none
       focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-gray-500`,
     info: tw`

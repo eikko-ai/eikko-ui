@@ -1,6 +1,5 @@
 module.exports = (componentName) => ({
-  content: `
-import React from 'react'
+  content: `import React from 'react'
 import tw, { css, styled, theme } from 'twin.macro'
 
 interface ${componentName}Props {

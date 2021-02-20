@@ -1,6 +1,5 @@
 module.exports = (componentName) => ({
-  content: `
-import React from "react";
+  content: `import React from "react";
 import {${componentName}} from "./${componentName}";
 
 export default {

@@ -32,6 +32,24 @@ export const Buttons = () => {
             Solid Danger
           </Button>
         </div>
+
+        <div tw="p-8 flex space-x-4">
+          <Button variant="solid" intent="dark" size="xs">
+            Solid Primary
+          </Button>
+          <Button variant="solid" intent="dark" size="sm">
+            Solid Primary
+          </Button>
+          <Button variant="solid" intent="dark" size="md">
+            Solid Primary
+          </Button>
+          <Button variant="solid" intent="dark" size="lg">
+            Solid Primary
+          </Button>
+          <Button variant="solid" intent="dark" size="xl">
+            Solid Primary
+          </Button>
+        </div>
       </div>
     </div>
   )
