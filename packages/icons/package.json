@@ -1,0 +1,10 @@
+{
+  "name": "@kai/icons",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {},
+  "peerDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
