@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import tw, { styled } from 'twin.macro'
 import { Intent } from '../theme'
+import { IconType, Icon } from '../Icon'
 
 export type ButtonVariant = 'solid' | 'secondary' | 'outline' | 'ghost' | 'link' | 'unstyled'
 
@@ -25,10 +26,10 @@ interface ButtonProps {
   isWide?: boolean
   /** If true, the button text will be in all caps. */
   isUppercase?: boolean
-  // /** The name of the icon to appear to the left of the button text. */
-  // leftIcon?: IconName
-  // /** The name of the icon to appear to the right of the button text. */
-  // rightIcon?: IconName
+  /** The name of the icon to appear to the left of the button text. */
+  leftIcon?: IconType
+  /** The name of the icon to appear to the right of the button text. */
+  rightIcon?: IconType
 }
 
 const sizeStyles = {
@@ -49,37 +50,37 @@ const variantIntentStyles = {
     primary: tw`
     bg-primary-600 hover:bg-primary-700
       focus:outline-none
-      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-primary-500`,
+      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-primary-300`,
     secondary: tw`
     bg-secondary-600 hover:bg-secondary-700
       focus:outline-none
-      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-secondary-500`,
+      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-secondary-300`,
     light: tw`
     text-gray-700
     bg-white hover:bg-gray-50
     border-gray-300
       focus:outline-none
-      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-gray-500`,
+      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-gray-200`,
     dark: tw`
     bg-dark-800 hover:bg-dark-700
       focus:outline-none
-      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-gray-500`,
+      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-gray-300`,
     info: tw`
       bg-info-600 hover:bg-info-700
       focus:outline-none
-      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-info-500`,
+      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-info-300`,
     success: tw`
     bg-green-600 hover:bg-green-700
       focus:outline-none
-      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-green-500`,
+      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-green-300`,
     warning: tw`
     bg-yellow-600 hover:bg-yellow-700
       focus:outline-none
-      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-yellow-500`,
+      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-yellow-300`,
     danger: tw`
     bg-red-600 hover:bg-red-700
       focus:outline-none
-      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-red-500`
+      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-red-300`
   },
   secondary: {
     primary: tw``,
@@ -152,6 +153,12 @@ const StyledButton = styled.button(
 )
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  const { children, type, ...rest } = props
-  return <StyledButton {...rest}>{children}</StyledButton>
+  const { children, type, isLoading, ...rest } = props
+  return (
+    <StyledButton {...rest}>
+      {isLoading && <Fragment>{children}</Fragment>}
+
+      {!isLoading && <Fragment>{children}</Fragment>}
+    </StyledButton>
+  )
 }
