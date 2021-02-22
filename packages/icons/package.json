@@ -3,19 +3,27 @@
   "private": true,
   "version": "1.0.0",
   "description": "Kai UI component library icons",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/types/index.d.ts",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "unpkg": "./dist/index.umd.js",
+  "types": "./dist/types/index.d.ts",
+  "typings": "./dist/types/index.d.ts",
   "files": [
     "dist"
   ],
+  "sideEffects": false,
   "scripts": {
     "clean": "rimraf node_modules dist",
-    "build:ts": "tsc",
-    "build:js": "BUILD=production rollup -c",
-    "build": "npm run build:ts && npm run build:js"
+    "clean:dist": "rimraf dist",
+    "build": "yarn clean:dist && yarn build:uncompressed",
+    "build:uncompressed": "microbundle --jsx React.createElement --external react --no-compress",
+    "build:watch": "microbundle watch --jsx React.createElement --external react --no-compress"
   },
   "peerDependencies": {
+    "react": "^17.0.1"
+  },
+  "devDependencies": {
     "react": "^17.0.1"
   }
 }

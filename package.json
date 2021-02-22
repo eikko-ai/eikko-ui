@@ -15,12 +15,18 @@
     ]
   },
   "scripts": {
-    "clean": "rimraf node_modules",
-    "build": "cd packages/components && npm run build",
-    "dev": "cd packages/components && npm run watch & cd packages/playground && npm run start",
+    "clean": "yarn clean:components & yarn clean:icons & yarn clean:playground",
+    "clean:components": "yarn workspace @kai/components clean",
+    "clean:icons": "yarn workspace @kai/icons clean",
+    "clean:playground": "yarn workspace @kai/playground clean",
+    "start": "yarn workspace @kai/components watch & yarn workspace @kai/playground start",
+    "preinstall": "yarn clean",
+    "build": "yarn build:components & yarn build:icons",
+    "build:components": "yarn workspace @kai/components build",
+    "build:icons": "yarn workspace @kai/icons build",
     "lint": "eslint . --ignore-path ./.gitignore",
     "lint:fix": "eslint . --fix --ignore-path ./.gitignore",
-    "generate:component": "cd packages/scripts && npm run generate:component"
+    "generate:component": "yarn workspace @kai/scripts generate:component"
   },
   "keywords": [
     "eikko",
@@ -43,6 +49,17 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
+  "lint-staged": {
+    "*.{json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.12.17",
     "@babel/plugin-transform-runtime": "^7.12.17",
@@ -54,13 +71,15 @@
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.0",
-    "@types/node": "^14.14.30",
+    "@types/node": "^14.14.31",
     "@types/react-dom": "^17.0.1",
     "@types/react": "^17.0.2",
     "@types/styled-components": "^5.1.7",
     "babel-plugin-macros": "^3.0.1",
     "core-js": "^3.9.0",
-    "postcss": "^8.2.2",
+    "lint-staged": "^10.5.4",
+    "microbundle": "^0.13.0",
+    "postcss": "^8.2.6",
     "rimraf": "^3.0.2",
     "rollup-plugin-analyzer": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",

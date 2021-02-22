@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "description": "Kai UI component library",
-  "main": "dist/index.cjs.js",
+  "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/types/index.d.ts",
   "files": [
@@ -66,9 +66,12 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
+  "devDependencies": {
+    "postcss": "^8.2.6"
+  },
   "dependencies": {
     "styled-components": "^5.2.1",
-    "tailwindcss": "^2.0.2",
+    "tailwindcss": "^2.0.3",
     "twin.macro": "^2.2.3"
   }
 }
