@@ -2,11 +2,20 @@
   "name": "@kai/icons",
   "private": true,
   "version": "1.0.0",
-  "scripts": {},
-  "peerDependencies": {
-    "react": "^17.0.1"
+  "description": "Kai UI component library icons",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf node_modules dist",
+    "build:ts": "tsc",
+    "build:js": "BUILD=production rollup -c",
+    "build": "npm run build:ts && npm run build:js"
   },
-  "devDependencies": {
+  "peerDependencies": {
     "react": "^17.0.1"
   }
 }

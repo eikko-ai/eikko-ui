@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import tw, { styled } from 'twin.macro'
+import tw, { css, styled } from 'twin.macro'
 import { Intent } from '../theme'
-import { IconType, Icon } from '../Icon'
+import { Icon, IconType } from '../Icon'
 
 export type ButtonVariant = 'solid' | 'secondary' | 'outline' | 'ghost' | 'link' | 'unstyled'
 
@@ -27,9 +27,9 @@ interface ButtonProps {
   /** If true, the button text will be in all caps. */
   isUppercase?: boolean
   /** The name of the icon to appear to the left of the button text. */
-  leftIcon?: IconType
+  iconLeft?: IconType
   /** The name of the icon to appear to the right of the button text. */
-  rightIcon?: IconType
+  iconRight?: IconType
 }
 
 const sizeStyles = {
@@ -153,12 +153,58 @@ const StyledButton = styled.button(
 )
 
 export const Button: React.FC<ButtonProps> = (props) => {
-  const { children, type, isLoading, ...rest } = props
+  const { children, type, size = 'md', isLoading, iconLeft, iconRight, ...rest } = props
   return (
-    <StyledButton {...rest}>
+    <StyledButton size={size} {...rest}>
       {isLoading && <Fragment>{children}</Fragment>}
 
-      {!isLoading && <Fragment>{children}</Fragment>}
+      {!isLoading && (
+        <Fragment>
+          {iconLeft && <ButtonIcon iconLeft={iconLeft} size={size} />}
+          {children}
+          {iconRight && <ButtonIcon iconRight={iconRight} size={size} />}
+        </Fragment>
+      )}
     </StyledButton>
+  )
+}
+
+export type ButtonIconProps = {
+  iconLeft?: IconType
+  iconRight?: IconType
+  size: ButtonSize
+}
+
+const leftIconStyle = {
+  xs: tw`-ml-0.5 mr-2`,
+  sm: tw`-ml-0.5 mr-2`,
+  md: tw`-ml-1 mr-3`,
+  lg: tw`-ml-1 mr-3`,
+  xl: tw`-ml-1 mr-3`
+}
+
+const rightIconStyle = {
+  xs: tw`ml-2 -mr-0.5`,
+  sm: tw`ml-2 -mr-1`,
+  md: tw`ml-3 -mr-1`,
+  lg: tw`ml-3 -mr-1`,
+  xl: tw`ml-3 -mr-1`
+}
+
+export function ButtonIcon({ iconLeft, iconRight, size, ...rest }: ButtonIconProps) {
+  return (
+    <Fragment>
+      {iconLeft && (
+        <Icon {...rest} css={leftIconStyle[size]}>
+          {iconLeft}
+        </Icon>
+      )}
+
+      {iconRight && (
+        <Icon {...rest} css={rightIconStyle[size]}>
+          {iconRight}
+        </Icon>
+      )}
+    </Fragment>
   )
 }

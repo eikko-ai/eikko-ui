@@ -1,3 +1,1 @@
-export { Icon } from './Icon'
-
-export type { IconType } from './Icon'
+export * from './Icon'

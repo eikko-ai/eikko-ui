@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "noImplicitReturns": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "jsx": "preserve",
+    "jsxFactory": "h",
+    "target": "ES2017",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "emitDeclarationOnly": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "types/*.ts"],
+  "exclude": ["node_modules", "dist", "stories", ".storybook", "tests"]
+}

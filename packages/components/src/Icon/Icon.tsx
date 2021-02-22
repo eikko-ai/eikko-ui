@@ -1,15 +1,36 @@
 import React from 'react'
-import tw, { css, styled, theme } from 'twin.macro'
+import { cx } from '../util'
 
 export type IconType =
-  | string
   | React.FunctionComponent<{ 'className': string; 'aria-hidden': boolean }>
   | React.ComponentClass<{ 'className': string; 'aria-hidden': boolean }>
+  | React.ReactNode
+  | JSX.Element
+  | string
 
-interface IconProps {
-  foo: string
+export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+
+interface IconProps extends React.HTMLAttributes<HTMLElement> {
+  children: React.ReactNode
+  size?: IconSize
+  color?: string
+  className?: string
 }
 
-const Icon: React.FC<IconProps> = ({ foo }) => <div className="foo-bar">{foo}</div>
-
-export { Icon }
+export const Icon: React.FC<IconProps> = ({
+  children,
+  size = 'md',
+  color,
+  className,
+  ...other
+}) => {
+  return React.cloneElement(children as React.ReactElement<any>, {
+    size,
+    color,
+    'role': 'presentation',
+    'aria-hidden': true,
+    'style': { display: 'block' },
+    'className': cx('Icon', className),
+    ...other
+  })
+}

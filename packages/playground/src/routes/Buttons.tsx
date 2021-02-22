@@ -1,6 +1,7 @@
 import React from 'react'
 import 'twin.macro'
 import { Button } from '@kai/components'
+import { Archive } from '@kai/icons'
 
 export const Buttons = () => {
   return (
@@ -48,6 +49,42 @@ export const Buttons = () => {
           </Button>
           <Button variant="solid" intent="dark" size="xl">
             Solid Primary
+          </Button>
+        </div>
+
+        <div tw="p-8 flex space-x-4">
+          <Button variant="solid" intent="dark" size="xs" iconLeft={<Archive />}>
+            Left Icon
+          </Button>
+          <Button variant="solid" intent="dark" size="sm" iconLeft={<Archive />}>
+            Left Icon
+          </Button>
+          <Button variant="solid" intent="dark" size="md" iconLeft={<Archive />}>
+            Left Icon
+          </Button>
+          <Button variant="solid" intent="dark" size="lg" iconLeft={<Archive />}>
+            Left Icon
+          </Button>
+          <Button variant="solid" intent="dark" size="xl" iconLeft={<Archive />}>
+            Left Icon
+          </Button>
+        </div>
+
+        <div tw="p-8 flex space-x-4">
+          <Button variant="solid" intent="dark" size="xs" iconRight={<Archive />}>
+            Right Icon
+          </Button>
+          <Button variant="solid" intent="dark" size="sm" iconRight={<Archive />}>
+            Right Icon
+          </Button>
+          <Button variant="solid" intent="dark" size="md" iconRight={<Archive />}>
+            Right Icon
+          </Button>
+          <Button variant="solid" intent="dark" size="lg" iconRight={<Archive />}>
+            Right Icon
+          </Button>
+          <Button variant="solid" intent="dark" size="xl" iconRight={<Archive />}>
+            Right Icon
           </Button>
         </div>
       </div>
