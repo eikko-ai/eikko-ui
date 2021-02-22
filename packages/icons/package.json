@@ -18,8 +18,8 @@
     "clean": "rimraf node_modules dist",
     "clean:dist": "rimraf dist",
     "build": "yarn clean:dist && yarn build:uncompressed",
-    "build:uncompressed": "microbundle --jsx React.createElement --no-compress --no-sourcemap",
-    "build:watch": "microbundle watch --jsx React.createElement --no-compress --no-sourcemap"
+    "build:uncompressed": "microbundle --no-compress --no-sourcemap --jsx React.createElement",
+    "build:watch": "microbundle watch --no-compress --no-sourcemap --jsx React.createElement"
   },
   "peerDependencies": {
     "react": "^17.0.1"
