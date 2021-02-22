@@ -48,13 +48,13 @@ text-white font-medium tracking-wide
 const variantIntentStyles = {
   solid: {
     primary: tw`
-    bg-primary-600 hover:bg-primary-700
+    bg-b_petrol-700 hover:bg-b_petrol-800
       focus:outline-none
-      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-primary-300`,
+      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-b_petrol-300`,
     secondary: tw`
-    bg-secondary-600 hover:bg-secondary-700
+    bg-b_green-600 hover:bg-b_green-700
       focus:outline-none
-      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-secondary-300`,
+      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-b_green-300`,
     light: tw`
     text-gray-700
     bg-white hover:bg-gray-50
@@ -76,7 +76,7 @@ const variantIntentStyles = {
     warning: tw`
     bg-yellow-600 hover:bg-yellow-700
       focus:outline-none
-      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-yellow-300`,
+      focus:ring focus:ring-offset-0 ring-opacity-10 focus:ring-yellow-400`,
     danger: tw`
     bg-red-600 hover:bg-red-700
       focus:outline-none
