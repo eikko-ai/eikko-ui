@@ -5,6 +5,7 @@
   "description": "Kai UI component library icons",
   "source": "./src/index.ts",
   "main": "./dist/index.js",
+  "exports": "./dist/index.modern.js",
   "module": "./dist/index.esm.js",
   "unpkg": "./dist/index.umd.js",
   "types": "./dist/types/index.d.ts",
@@ -17,8 +18,8 @@
     "clean": "rimraf node_modules dist",
     "clean:dist": "rimraf dist",
     "build": "yarn clean:dist && yarn build:uncompressed",
-    "build:uncompressed": "microbundle --jsx React.createElement --external react --no-compress",
-    "build:watch": "microbundle watch --jsx React.createElement --external react --no-compress"
+    "build:uncompressed": "microbundle --jsx React.createElement --no-compress --no-sourcemap",
+    "build:watch": "microbundle watch --jsx React.createElement --no-compress --no-sourcemap"
   },
   "peerDependencies": {
     "react": "^17.0.1"
