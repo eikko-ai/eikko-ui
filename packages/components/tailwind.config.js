@@ -1,6 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
-const { textColor } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   // darkMode: 'media',
