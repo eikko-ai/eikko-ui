@@ -1,5 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
+const { textColor } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   // darkMode: 'media',
@@ -16,8 +17,8 @@ module.exports = {
           200: '#afcad2',
           300: '#86b0bb',
           400: '#5e95a5',
-          500: '#367B8E',
-          600: '#19434F',
+          500: '#367b8e',
+          600: '#19434f',
           700: '#14363f',
           800: '#0f282f',
           900: '#0a1b20'
@@ -63,8 +64,8 @@ module.exports = {
           100: '#cfd1fe',
           200: '#b6b9fe',
           300: '#9ea2fd',
-          400: '#868BFD',
-          500: '#5C63FF',
+          400: '#868bfd',
+          500: '#5c63ff',
           600: '#4a4fcc',
           700: '#373b99',
           800: '#252866',
@@ -74,21 +75,21 @@ module.exports = {
           50: '#f8f7ff',
           100: '#f5f2ff',
           200: '#f1eeff',
-          300: '#EEEAFF',
-          400: '#E1DCF8',
-          500: '#D8CEFF',
-          600: '#C2B8ED',
+          300: '#eeeaff',
+          400: '#e1dcf8',
+          500: '#d8ceff',
+          600: '#c2b8ed',
           700: '#9b93be',
           800: '#615c77',
           900: '#27252f'
         },
         b_coral: {
-          50: '#FBF5F0',
-          100: '#F9F1EA',
-          200: '#F8EFE7',
-          300: '#F7EDE4',
-          400: '#F6EBE1',
-          500: '#F0C4BA',
+          50: '#fbf5f0',
+          100: '#f9f1ea',
+          200: '#f8efe7',
+          300: '#f7ede4',
+          400: '#f6ebe1',
+          500: '#f0c4ba',
           600: '#ff785b',
           700: '#cc6049',
           800: '#994837',
@@ -97,11 +98,11 @@ module.exports = {
         b_gray: {
           50: '#fafafa',
           100: '#f7f7f7',
-          200: '#F5F5F5',
+          200: '#f5f5f5',
           300: '#bebebe',
           400: '#929292',
-          500: '#4A4A4A',
-          600: '#1C1C1C',
+          500: '#4a4a4a',
+          600: '#1c1c1c',
           700: '#191919',
           800: '#161616',
           900: '#111111'
@@ -127,7 +128,9 @@ module.exports = {
     }
   },
   variants: {
-    extend: {}
+    extend: {
+      backgroundColor: ['active']
+    }
   },
   plugins: []
 }
