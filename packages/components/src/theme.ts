@@ -7,3 +7,6 @@ export type Intent =
   | 'success'
   | 'warning'
   | 'danger'
+
+/** UI Element size, typically ranging from xs to xl. */
+export type ElementSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'

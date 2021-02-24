@@ -1,7 +1,7 @@
 import React from 'react'
 import 'twin.macro'
-import { Button } from '@kai/components'
-import { Archive } from '@kai/icons'
+import { Button, Spinner } from '@kai/components'
+import { Archive, Book } from '@kai/icons'
 
 export const Buttons = () => {
   return (
@@ -230,12 +230,29 @@ export const Buttons = () => {
           </Button>
         </div>
 
+        <div tw="p-8 flex space-x-4 flex-wrap">
+          <Button variant="solid" intent="primary" size="xl" isLoading loadingText="Loading...">
+            Upload
+          </Button>
+
+          <Button variant="secondary" intent="info" size="xl" isLoading>
+            Upload
+          </Button>
+        </div>
+
+        <div tw="p-8">
+          <Spinner size="xl" speed="fast" label="Loading" isCentered tw="text-red-700" />
+        </div>
+
         <div tw="p-8 flex space-x-4">
-          <Button variant="solid" intent="primary" isWide>
+          <Button variant="solid" intent="primary" isWide iconLeft={<Archive />}>
             Wide
           </Button>
-          <Button variant="solid" intent="secondary" isWide>
-            Wide
+          <Button variant="solid" intent="primary" isWide iconLeft={<Book />} floatIcon>
+            Wide Float Icon
+          </Button>
+          <Button variant="solid" intent="danger" isWide iconRight={<Book />} floatIcon>
+            Wide Float Icon
           </Button>
         </div>
       </div>

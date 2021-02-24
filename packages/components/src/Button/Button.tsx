@@ -1,29 +1,33 @@
-import React, { Fragment } from 'react'
-import tw, { css, styled } from 'twin.macro'
-import { Intent } from '../theme'
+import React, { Fragment, Props } from 'react'
+import tw, { styled } from 'twin.macro'
+import { cx, dataAttr } from '../util'
+import { Intent, ElementSize } from '../theme'
 import { Icon, IconType } from '../Icon'
+import { Spinner } from '../Spinner'
 
 export type ButtonVariant = 'solid' | 'secondary' | 'outline' | 'ghost' | 'link' | 'unstyled'
 
 export type ButtonIntent = Intent
 
-export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+export type ButtonSize = ElementSize
 
 export interface ButtonOptions {
-  /** The html button type to use. */
-  type?: 'button' | 'reset' | 'submit'
   /** The size of the button. */
   size?: ButtonSize
   /** Controls the basic button style. */
   variant?: ButtonVariant
   /** Controls the colour of the button. */
   intent?: ButtonIntent
-  // /** If `true`, the button will be styled in it's active state. */
-  // isActive?: boolean
+  /** If `true`, the button will be styled in it's active state. */
+  isActive?: boolean
   /** Sets the button as disabled. */
   isDisabled?: boolean
   /** Show a loading indicator. */
   isLoading?: boolean
+  /** Set a custom spinner element */
+  spinner?: React.ReactElement
+  /** Shows a loading text when isLoading is true. */
+  loadingText?: string
   /** If true, the button will be displayed as a block element instead of inline. */
   isWide?: boolean
   /** If true, the button text will be in all caps. */
@@ -32,13 +36,17 @@ export interface ButtonOptions {
   iconLeft?: IconType
   /** The name of the icon to appear to the right of the button text. */
   iconRight?: IconType
+  /** If `true` it floats the icon to the left/right. */
+  floatIcon?: boolean
+  /** Hyperlink for when button is rendered as an anchor link */
+  href?: string
 }
 
-export interface ButtonProps extends ButtonOptions {
-  children: React.ReactNode
-  /** Custom component to be rendered, defautls to `div`. */
+export interface ButtonProps extends ButtonOptions, React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Custom component to be rendered, defaults to `button`. */
   as?: React.ElementType<any>
-  ref?: React.Ref<HTMLButtonElement>
+  /** The html button type to use. */
+  type?: 'button' | 'reset' | 'submit'
 }
 
 const sizeStyles = {
@@ -50,15 +58,16 @@ const sizeStyles = {
 }
 
 const baseStyles = tw`
-text-white font-medium tracking-wide
-inline-flex items-center justify-center
-border border-transparent
-rounded
-transition-colors duration-150 ease-in-out
-cursor-pointer
-select-none
-shadow-sm
-focus:outline-none focus:ring ring-opacity-10`
+  text-white font-medium tracking-wide
+  inline-flex items-center justify-center
+  border border-transparent
+  rounded
+  transition-colors duration-150 ease-in-out
+  cursor-pointer
+  select-none
+  shadow-sm
+  focus:outline-none focus:ring ring-opacity-10
+`
 
 const variantIntentStyles = {
   solid: {
@@ -334,6 +343,22 @@ const variantIntentStyles = {
   }
 }
 
+const leftIconStyle = {
+  xs: tw`-ml-0.5 mr-2`,
+  sm: tw`-ml-0.5 mr-2`,
+  md: tw`-ml-1 mr-3`,
+  lg: tw`-ml-1 mr-3`,
+  xl: tw`-ml-1.5 mr-3`
+}
+
+const rightIconStyle = {
+  xs: tw`ml-2 -mr-0.5`,
+  sm: tw`ml-2 -mr-1`,
+  md: tw`ml-3 -mr-1`,
+  lg: tw`ml-3 -mr-1`,
+  xl: tw`ml-3 -mr-1.5`
+}
+
 const Component = styled.button(
   ({
     size = 'md',
@@ -352,66 +377,87 @@ const Component = styled.button(
   ]
 )
 
-export const Button: React.FC<ButtonProps> = (props) => {
+export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
   const {
     children,
+    className,
     as = 'button',
-    ref,
-    type,
+    type = 'button',
     size = 'md',
+    isDisabled,
     isLoading,
+    isActive,
     iconLeft,
     iconRight,
+    spinner,
+    loadingText,
+    floatIcon,
+    href,
+    onClick,
     ...rest
   } = props
   return (
-    <Component as={as} size={size} {...rest}>
-      {isLoading && <Fragment>{children}</Fragment>}
+    <Component
+      as={as}
+      ref={ref}
+      role="button"
+      type={type}
+      href={as === 'a' && isDisabled ? undefined : href}
+      className={cx('Button', className)}
+      isDisabled={isDisabled}
+      disabled={isDisabled || isLoading}
+      aria-disabled={isDisabled}
+      data-active={dataAttr(isActive)}
+      data-loading={dataAttr(isLoading)}
+      tabIndex={isDisabled ? undefined : 0}
+      onClick={onClick}
+      size={size}
+      floatIcon={floatIcon}
+      {...rest}
+    >
+      {isLoading && (
+        <Fragment>
+          {spinner ? (
+            spinner
+          ) : (
+            <Spinner delay={50} size={size} css={loadingText && tw`-ml-1 mr-2`} />
+          )}
+          {loadingText && <span tw="ml-2">{loadingText}</span>}
+        </Fragment>
+      )}
 
       {!isLoading && (
         <Fragment>
-          {iconLeft && <ButtonIcon iconLeft={iconLeft} size={size} />}
-          {children}
-          {iconRight && <ButtonIcon iconRight={iconRight} size={size} />}
+          {iconLeft && <ButtonIcon size={size} iconLeft={iconLeft} floatIcon={floatIcon} />}
+          <div css={[floatIcon && tw`flex-1`]}>{children}</div>
+          {iconRight && <ButtonIcon size={size} iconRight={iconRight} floatIcon={floatIcon} />}
         </Fragment>
       )}
     </Component>
   )
-}
+})
+
+// -- ButtonIcon
 
 export type ButtonIconProps = {
   iconLeft?: IconType
   iconRight?: IconType
-  size: ButtonSize
+  floatIcon?: boolean
+  size: ElementSize
 }
 
-const leftIconStyle = {
-  xs: tw`-ml-0.5 mr-2`,
-  sm: tw`-ml-0.5 mr-2`,
-  md: tw`-ml-1 mr-3`,
-  lg: tw`-ml-1 mr-3`,
-  xl: tw`-ml-1.5 mr-3`
-}
-
-const rightIconStyle = {
-  xs: tw`ml-2 -mr-0.5`,
-  sm: tw`ml-2 -mr-1`,
-  md: tw`ml-3 -mr-1`,
-  lg: tw`ml-3 -mr-1`,
-  xl: tw`ml-3 -mr-1.5`
-}
-
-export function ButtonIcon({ iconLeft, iconRight, size, ...rest }: ButtonIconProps) {
+/** The icon to embedd in a button */
+export function ButtonIcon({ size, iconLeft, iconRight, floatIcon, ...rest }: ButtonIconProps) {
   return (
     <Fragment>
       {iconLeft && (
-        <Icon {...rest} css={leftIconStyle[size]}>
+        <Icon {...rest} css={[leftIconStyle[size], floatIcon && [tw`mr-0`]]}>
           {iconLeft}
         </Icon>
       )}
 
       {iconRight && (
-        <Icon {...rest} css={rightIconStyle[size]}>
+        <Icon {...rest} css={[rightIconStyle[size], floatIcon && [tw`ml-0`]]}>
           {iconRight}
         </Icon>
       )}

@@ -1,1 +1,3 @@
-export { Button } from './Button'
+export * from './Button'
+export * from './Icon'
+export * from './Spinner'

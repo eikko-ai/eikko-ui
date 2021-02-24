@@ -9,6 +9,10 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans]
       },
       ringOpacity: ['hover', 'active'],
+      animation: {
+        'spin-slow': 'spin 2000ms linear infinite',
+        'spin-fast': 'spin 500ms linear infinite'
+      },
       colors: {
         b_petrol: {
           50: '#ebf2f4',

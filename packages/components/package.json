@@ -67,10 +67,12 @@
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
+    "@types/tinycolor2": "^1.4.2",
     "postcss": "^8.2.6"
   },
   "dependencies": {
     "styled-components": "^5.2.1",
+    "tinycolor2": "^1.4.2",
     "tailwindcss": "^2.0.3",
     "twin.macro": "^2.2.3"
   }
