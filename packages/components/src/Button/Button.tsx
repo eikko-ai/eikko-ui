@@ -1,4 +1,4 @@
-import React, { Fragment, Props } from 'react'
+import React, { Fragment } from 'react'
 import tw, { styled } from 'twin.macro'
 import { cx, dataAttr } from '../util'
 import { Intent, ElementSize } from '../theme'

@@ -1,7 +1,7 @@
 {
   "name": "@kai/components",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Kai UI component library",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -19,19 +19,19 @@
     }
   },
   "scripts": {
-    "clean": "rimraf node_modules dist",
+    "clean": "rimraf dist",
     "build:ts": "tsc",
     "build:js": "BUILD=production rollup -c",
-    "build": "npm run build:ts && npm run build:js",
+    "build": "yarn build:ts && yarn build:js",
     "watch:ts": "tsc --watch",
     "watch:js": "rollup -c --watch",
-    "watch": "npm run watch:ts & npm run watch:js",
+    "watch": "yarn watch:ts & npm run watch:js",
     "storybook": "start-storybook -p 6060",
     "storybook:export": "build-storybook",
     "lint": "eslint . --ignore-path ./.gitignore",
     "lint:fix": "eslint . --fix --ignore-path ./.gitignore",
     "format": "prettier --write \"**/*.{js,jsx,ts, tsx,json,md}\"",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "yarn build"
   },
   "keywords": [
     "ui",
@@ -67,13 +67,15 @@
     "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@types/tinycolor2": "^1.4.2",
     "postcss": "^8.2.6"
   },
   "dependencies": {
+    "@react-aria/label": "^3.1.1",
+    "@types/tinycolor2": "^1.4.2",
+    "react-hot-toast": "^1.0.2",
     "styled-components": "^5.2.1",
-    "tinycolor2": "^1.4.2",
     "tailwindcss": "^2.0.3",
+    "tinycolor2": "^1.4.2",
     "twin.macro": "^2.2.3"
   }
 }

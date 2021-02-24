@@ -2,12 +2,11 @@ import babel from '@rollup/plugin-babel'
 import commonJS from '@rollup/plugin-commonjs'
 import resolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
-import terser from 'rollup-plugin-terser'
+import { terser } from 'rollup-plugin-terser'
 import analyze from 'rollup-plugin-analyzer'
 import pkg from './package.json'
 
-const env = process.env.BUILD !== '' ? JSON.stringify(process.env.BUILD) : 'development'
-const isProduction = env === 'production'
+const isProduction = process.env.BUILD === 'production'
 
 const config = {
   name: 'kai',
@@ -28,8 +27,8 @@ const plugins = [
     include: ['src/**/*'],
     exclude: 'node_modules/**'
   }),
-  analyze({ summaryOnly: true, limit: 10 }),
-  isProduction && terser()
+  isProduction && terser(),
+  analyze({ summaryOnly: true, limit: 10 })
 ]
 
 export default [

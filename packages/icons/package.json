@@ -15,7 +15,7 @@
   ],
   "sideEffects": false,
   "scripts": {
-    "clean": "rimraf node_modules dist",
+    "clean": "rimraf dist",
     "clean:dist": "rimraf dist",
     "build": "yarn clean:dist && yarn build:uncompressed",
     "build:uncompressed": "microbundle --no-compress --no-sourcemap --jsx React.createElement",

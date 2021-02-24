@@ -19,13 +19,17 @@
     "clean:components": "yarn workspace @kai/components clean",
     "clean:icons": "yarn workspace @kai/icons clean",
     "clean:playground": "yarn workspace @kai/playground clean",
+    "reset": "yarn clean && rm -rf node_modules .yarn/cache",
     "start": "yarn workspace @kai/components watch & yarn workspace @kai/playground start",
     "build": "yarn build:components & yarn build:icons",
     "build:components": "yarn workspace @kai/components build",
     "build:icons": "yarn workspace @kai/icons build",
-    "lint": "eslint . --ignore-path ./.gitignore",
-    "lint:fix": "eslint . --fix --ignore-path ./.gitignore",
-    "generate:component": "yarn workspace @kai/scripts generate:component"
+    "types:check": "tsc --skipLibCheck --noEmit",
+    "lint": "eslint . --ignore-path ./.gitignore packages --ext .js,.ts,.tsx",
+    "lint:fix": "eslint . --fix --ignore-path ./.gitignore packages --ext .js,.ts,.tsx",
+    "bump": "yarn version apply --all",
+    "bump:check": "yarn version check",
+    "gen:component": "yarn workspace @kai/scripts gen:component"
   },
   "keywords": [
     "eikko",

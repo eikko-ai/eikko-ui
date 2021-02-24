@@ -10,8 +10,8 @@
     }
   },
   "scripts": {
-    "clean": "rimraf node_modules dist",
-    "start": "react-scripts start",
+    "clean": "rimraf dist",
+    "start": "BROWSER=none react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
