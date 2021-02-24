@@ -405,6 +405,7 @@ export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLB
       href={as === 'a' && isDisabled ? undefined : href}
       className={cx('Button', className)}
       isDisabled={isDisabled}
+      active={isActive}
       disabled={isDisabled || isLoading}
       aria-disabled={isDisabled}
       data-active={dataAttr(isActive)}
