@@ -59,30 +59,30 @@ export interface ButtonProps extends ButtonOptions, React.ButtonHTMLAttributes<H
 const sizeStyles = (hasChildren: boolean) => {
   if (hasChildren) {
     return {
-      xs: tw`h-7 leading-4 py-1.5 px-2.5 text-xs`,
-      sm: tw`h-8 leading-4 py-2 px-3 text-sm`,
-      md: tw`h-8 leading-5 py-2 px-4 text-sm`,
-      lg: tw`h-10 leading-6 py-2 px-4 text-base`,
-      xl: tw`h-12 leading-6 py-3 px-6 text-lg`
+      xs: tw`px-2 py-1.5 text-xs leading-4`,
+      sm: tw`px-3 py-2 text-sm leading-4`,
+      md: tw`px-4 py-2 text-sm leading-5`,
+      lg: tw`px-4 py-2 text-base leading-6`,
+      xl: tw`px-6 py-3 text-lg leading-6`
     }
   } else {
     return {
-      xs: tw`h-7 w-7 text-xl`,
-      sm: tw`h-8 w-8 text-sm`,
-      md: tw`h-8 w-8 text-base`,
-      lg: tw`h-10 w-10 text-lg`,
-      xl: tw`h-12 w-12 text-xl`
+      xs: tw`p-1`,
+      sm: tw`p-1.5`,
+      md: tw`p-2`,
+      lg: tw`p-2`,
+      xl: tw`p-3`
     }
   }
 }
 
 const baseStyles = tw`
-  select-none
-  text-white font-medium tracking-wide
   inline-flex items-center justify-center
+  text-white font-medium tracking-wide
   border border-transparent rounded shadow-sm
   focus:outline-none focus:ring ring-opacity-10
   transition-colors duration-150 ease-in-out
+  select-none
 `
 
 const variantIntentStyles = {
@@ -382,8 +382,7 @@ const Component = styled.button(
     isUppercase && tw`uppercase`,
     isDisabled && tw`opacity-40 cursor-default pointer-events-none`,
     isLoading && tw`opacity-90 cursor-not-allowed!`,
-    isRounded && buttonHasChildren && tw`rounded-3xl`,
-    isRounded && !buttonHasChildren && tw`rounded-full`
+    isRounded && tw`rounded-full`
   ]
 )
 
@@ -482,6 +481,14 @@ export type ButtonIconProps = {
   size: ElementSize
 }
 
+const iconSizeStyle = {
+  xs: tw`h-4 w-4`,
+  sm: tw`h-4 w-4`,
+  md: tw`h-5 w-5`,
+  lg: tw`h-5 w-5`,
+  xl: tw`h-6 w-6`
+}
+
 const leftIconStyle = {
   xs: tw`-ml-0.5 mr-2`,
   sm: tw`-ml-0.5 mr-2`,
@@ -509,13 +516,25 @@ export function ButtonIcon({
   return (
     <Fragment>
       {iconLeft && (
-        <Icon css={[parentHasChildren && leftIconStyle[size], floatIcon && [tw`mr-0`]]}>
+        <Icon
+          css={[
+            iconSizeStyle[size],
+            parentHasChildren && leftIconStyle[size],
+            floatIcon && [tw`mr-0`]
+          ]}
+        >
           {iconLeft}
         </Icon>
       )}
 
       {iconRight && (
-        <Icon css={[parentHasChildren && rightIconStyle[size], floatIcon && [tw`ml-0`]]}>
+        <Icon
+          css={[
+            iconSizeStyle[size],
+            parentHasChildren && rightIconStyle[size],
+            floatIcon && [tw`ml-0`]
+          ]}
+        >
           {iconRight}
         </Icon>
       )}
