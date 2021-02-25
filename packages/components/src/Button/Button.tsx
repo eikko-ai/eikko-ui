@@ -67,7 +67,7 @@ const sizeStyles = (hasChildren: boolean) => {
     }
   } else {
     return {
-      xs: tw`h-7 w-7 text-xs`,
+      xs: tw`h-7 w-7 text-xl`,
       sm: tw`h-8 w-8 text-sm`,
       md: tw`h-8 w-8 text-base`,
       lg: tw`h-10 w-10 text-lg`,

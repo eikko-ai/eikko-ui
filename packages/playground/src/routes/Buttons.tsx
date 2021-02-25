@@ -1,7 +1,7 @@
 import React from 'react'
 import 'twin.macro'
 import { Button, Spinner } from '@kai/components'
-import { Archive, Book, Star, Plus } from '@kai/icons'
+import { ArchiveIcon, BookOpenIcon, StarSolidIcon, PlusSolidIcon } from '@kai/icons'
 
 export const Buttons = () => {
   const [isDisabled, setDisabled] = React.useState(false)
@@ -91,22 +91,22 @@ export const Buttons = () => {
         </div>
 
         <div tw="p-8 flex space-x-2 flex-wrap">
-          <Button variant="solid" size="xs" iconLeft={<Archive />}>
+          <Button variant="solid" size="xs" iconLeft={<ArchiveIcon />}>
             Left Icon
           </Button>
-          <Button variant="solid" size="sm" iconLeft={<Archive />}>
+          <Button variant="solid" size="sm" iconLeft={<ArchiveIcon />}>
             Left Icon
           </Button>
-          <Button variant="solid" size="md" iconLeft={<Archive />}>
+          <Button variant="solid" size="md" iconLeft={<ArchiveIcon />}>
             Left Icon
           </Button>
-          <Button variant="solid" size="md" iconRight={<Archive />}>
+          <Button variant="solid" size="md" iconRight={<ArchiveIcon />}>
             Right Icon
           </Button>
-          <Button variant="solid" size="lg" iconLeft={<Archive />}>
+          <Button variant="solid" size="lg" iconLeft={<ArchiveIcon />}>
             Left Icon
           </Button>
-          <Button variant="solid" size="xl" iconLeft={<Archive />}>
+          <Button variant="solid" size="xl" iconLeft={<ArchiveIcon />}>
             Left Icon
           </Button>
         </div>
@@ -163,39 +163,44 @@ export const Buttons = () => {
         </div>
 
         <div tw="p-8 flex space-x-2">
-          <Button variant="solid" intent="primary" isWide icon={<Archive />}>
+          <Button variant="solid" intent="primary" isWide icon={<ArchiveIcon />}>
             Wide
           </Button>
-          <Button variant="solid" intent="primary" isWide icon={<Book />} floatIcon>
+          <Button variant="solid" intent="primary" isWide icon={<BookOpenIcon />} floatIcon>
             Wide Float Icon
           </Button>
-          <Button variant="solid" intent="danger" isWide iconRight={<Book />} floatIcon>
+          <Button variant="solid" intent="danger" isWide iconRight={<BookOpenIcon />} floatIcon>
             Wide Float Icon
           </Button>
         </div>
       </div>
 
       <div tw="p-8 flex space-x-2">
-        <Button icon={<Star />} size="xs" />
-        <Button icon={<Star />} size="sm" />
-        <Button icon={<Star />} size="md" />
-        <Button icon={<Star />} size="lg" />
-        <Button icon={<Star />} size="xl" />
-        <Button icon={<Star />} size="xl">
+        <Button icon={<StarSolidIcon />} size="xs" />
+        <Button icon={<StarSolidIcon />} size="sm" />
+        <Button icon={<StarSolidIcon />} size="md" />
+        <Button icon={<StarSolidIcon />} size="lg" />
+        <Button icon={<StarSolidIcon />} size="xl" />
+        <Button icon={<StarSolidIcon />} size="xl">
           Star
         </Button>
-        <Button icon={<Star />} size="md" />
-        <Button icon={<Star />} size="md">
+        <Button icon={<StarSolidIcon />} size="md" />
+        <Button icon={<StarSolidIcon />} size="md">
           Star
         </Button>
       </div>
 
       <div tw="p-8 flex space-x-2">
-        <Button icon={<Star />} size="xs" isRounded />
-        <Button icon={<Star />} size="sm" isRounded />
-        <Button icon={<Star />} size="md" isRounded />
-        <Button icon={<Star />} size="lg" isRounded />
-        <Button icon={<Plus />} size="xl" isRounded tw="bg-green-600 text-green-100 shadow-lg" />
+        <Button icon={<StarSolidIcon />} size="xs" isRounded />
+        <Button icon={<StarSolidIcon />} size="sm" isRounded />
+        <Button icon={<StarSolidIcon />} size="md" isRounded />
+        <Button icon={<StarSolidIcon />} size="lg" isRounded />
+        <Button
+          icon={<PlusSolidIcon />}
+          size="xl"
+          isRounded
+          tw="bg-green-600 text-green-100 shadow-lg"
+        />
       </div>
     </div>
   )
