@@ -1,4 +1,7 @@
+export * from './assertion'
 export * from './color'
 export * from './dom'
+export * from './functions'
 export * from './object'
+export * from './react'
 export * from './types'

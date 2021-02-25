@@ -1,7 +1,7 @@
 import React from 'react'
 import 'twin.macro'
 import { Button, Spinner } from '@kai/components'
-import { Archive, Book } from '@kai/icons'
+import { Archive, Book, Star, Plus } from '@kai/icons'
 
 export const Buttons = () => {
   const [isDisabled, setDisabled] = React.useState(false)
@@ -10,7 +10,7 @@ export const Buttons = () => {
   return (
     <div tw="h-screen bg-white">
       <div tw="container">
-        <div tw="p-8 flex space-x-4 flex-wrap">
+        <div tw="p-8 flex space-x-2 flex-wrap">
           <Button
             as="button"
             variant="solid"
@@ -45,7 +45,7 @@ export const Buttons = () => {
           </Button>
         </div>
 
-        <div tw="p-8 flex space-x-4 flex-wrap">
+        <div tw="p-8 flex space-x-2 flex-wrap">
           <Button variant="secondary" intent="primary">
             Secondary
           </Button>
@@ -72,7 +72,7 @@ export const Buttons = () => {
           </Button>
         </div>
 
-        <div tw="p-8 flex space-x-4 flex-wrap">
+        <div tw="p-8 flex space-x-2 flex-wrap">
           <Button variant="solid" size="xs">
             Solid
           </Button>
@@ -90,7 +90,7 @@ export const Buttons = () => {
           </Button>
         </div>
 
-        <div tw="p-8 flex space-x-4 flex-wrap">
+        <div tw="p-8 flex space-x-2 flex-wrap">
           <Button variant="solid" size="xs" iconLeft={<Archive />}>
             Left Icon
           </Button>
@@ -111,7 +111,7 @@ export const Buttons = () => {
           </Button>
         </div>
 
-        <div tw="p-8 flex space-x-4 flex-wrap">
+        <div tw="p-8 flex space-x-2 flex-wrap">
           <Button variant="solid" intent="primary" isDisabled>
             Disabled
           </Button>
@@ -140,22 +140,20 @@ export const Buttons = () => {
           </Button>
         </div>
 
-        <div tw="p-8 flex space-x-4 flex-wrap">
+        <div tw="p-8 flex space-x-2 flex-wrap">
           <Button
             variant="solid"
             intent="primary"
             size="xl"
             isLoading={isLoading}
             loadingText="Loading..."
+            isWide
+            isRounded
             onClick={() => {
               setLoading(!isLoading)
               console.log(isLoading)
             }}
           >
-            Upload
-          </Button>
-
-          <Button variant="secondary" intent="info" size="xl" isLoading={isLoading}>
             Upload
           </Button>
         </div>
@@ -164,17 +162,40 @@ export const Buttons = () => {
           <Spinner size="xl" speed="fast" label="Loading" isCentered tw="text-red-700" />
         </div>
 
-        <div tw="p-8 flex space-x-4">
-          <Button variant="solid" intent="primary" isWide iconLeft={<Archive />}>
+        <div tw="p-8 flex space-x-2">
+          <Button variant="solid" intent="primary" isWide icon={<Archive />}>
             Wide
           </Button>
-          <Button variant="solid" intent="primary" isWide iconLeft={<Book />} floatIcon>
+          <Button variant="solid" intent="primary" isWide icon={<Book />} floatIcon>
             Wide Float Icon
           </Button>
           <Button variant="solid" intent="danger" isWide iconRight={<Book />} floatIcon>
             Wide Float Icon
           </Button>
         </div>
+      </div>
+
+      <div tw="p-8 flex space-x-2">
+        <Button icon={<Star />} size="xs" />
+        <Button icon={<Star />} size="sm" />
+        <Button icon={<Star />} size="md" />
+        <Button icon={<Star />} size="lg" />
+        <Button icon={<Star />} size="xl" />
+        <Button icon={<Star />} size="xl">
+          Star
+        </Button>
+        <Button icon={<Star />} size="md" />
+        <Button icon={<Star />} size="md">
+          Star
+        </Button>
+      </div>
+
+      <div tw="p-8 flex space-x-2">
+        <Button icon={<Star />} size="xs" isRounded />
+        <Button icon={<Star />} size="sm" isRounded />
+        <Button icon={<Star />} size="md" isRounded />
+        <Button icon={<Star />} size="lg" isRounded />
+        <Button icon={<Plus />} size="xl" isRounded tw="bg-green-600 text-green-100 shadow-lg" />
       </div>
     </div>
   )

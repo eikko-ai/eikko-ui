@@ -20,5 +20,9 @@ export const getWindow = (node?: HTMLElement | null) => node?.ownerDocument?.def
 export const dataAttr = (condition: boolean | undefined) =>
   (condition ? '' : undefined) as Booleanish
 
-// Class Names utility
+export const ariaAttr = (condition: boolean | undefined) => (condition ? true : undefined)
+
+export const getOwnerDocument = (node?: HTMLElement) => node?.ownerDocument || document
+
+/** Class Names utility to merge multiple class names */
 export const cx = (...classNames: any[]) => classNames.filter(Boolean).join(' ')

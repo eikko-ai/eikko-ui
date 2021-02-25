@@ -1,1 +1,2 @@
-export * from './FormLabel'
+export * from './Input'
+export * from './FormControl'

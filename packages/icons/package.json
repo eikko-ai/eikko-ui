@@ -17,6 +17,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "clean:dist": "rimraf dist",
+    "generate": "node ./generate.js",
     "build": "yarn clean:dist && yarn build:uncompressed",
     "build:uncompressed": "microbundle --no-compress --no-sourcemap --jsx React.createElement",
     "build:watch": "microbundle watch --no-compress --no-sourcemap --jsx React.createElement"
@@ -25,6 +26,7 @@
     "react": "^17.0.1"
   },
   "devDependencies": {
+    "degit": "^2.8.0",
     "react": "^17.0.1"
   }
 }
