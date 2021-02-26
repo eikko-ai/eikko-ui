@@ -5,7 +5,7 @@ import styledImport, { CSSProp, css as cssImport } from 'styled-components'
 declare global {
   namespace JSX {
     interface IntrinsicAttributes<T> extends DOMAttributes<T> {
-      as?: string
+      as?: React.ElementType<any>
     }
   }
 }

@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useMemo } from 'react'
 import tw, { styled } from 'twin.macro'
-import { cx, dataAttr } from '../util'
+import { cx, forwardRef, PropsOf, StyledComponent, dataAttr } from '../util'
 import { Intent, ElementSize } from '../theme'
 import { Icon, IconType } from '../Icon'
 import { Spinner } from '../Spinner'
@@ -47,13 +47,6 @@ export interface ButtonOptions {
   href?: string
   /** A label required for accessibility when displaying the icon only.  */
   label?: string
-}
-
-export interface ButtonProps extends ButtonOptions, React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Custom component to be rendered, defaults to `button`. */
-  as?: React.ElementType<any>
-  /** The html button type to use. */
-  type?: 'button' | 'reset' | 'submit'
 }
 
 const sizeStyles = (hasChildren: boolean) => {
@@ -359,12 +352,9 @@ const variantIntentStyles = {
   }
 }
 
-type ComponentOptions = Partial<ButtonOptions> & {
-  buttonHasChildren?: boolean
-}
-
-const Component = styled.button(
+const Component: StyledComponent<'button', ButtonOptions> = styled.button(
   ({
+    children,
     size = 'md',
     variant = 'solid',
     intent = 'primary',
@@ -372,19 +362,27 @@ const Component = styled.button(
     isUppercase,
     isDisabled,
     isLoading,
-    isRounded,
-    buttonHasChildren = true
-  }: ComponentOptions) => [
-    baseStyles,
-    sizeStyles(buttonHasChildren)[size],
-    variantIntentStyles[variant][intent],
-    isWide && tw`w-full`,
-    isUppercase && tw`uppercase`,
-    isDisabled && tw`opacity-40 cursor-default pointer-events-none`,
-    isLoading && tw`opacity-90 cursor-not-allowed!`,
-    isRounded && tw`rounded-full`
-  ]
+    isRounded
+  }: ButtonProps) => {
+    const hasChildren = useMemo(() => !!children, [children])
+
+    return [
+      baseStyles,
+      sizeStyles(hasChildren)[size],
+      variantIntentStyles[variant][intent],
+      isWide && tw`w-full`,
+      isUppercase && tw`uppercase`,
+      isDisabled && tw`opacity-40 cursor-default pointer-events-none`,
+      isLoading && tw`opacity-90 cursor-not-allowed!`,
+      isRounded && tw`rounded-full`
+    ]
+  }
 )
+
+type ButtonProps = PropsOf<typeof Component> & {
+  /** The html button type to use. */
+  type?: 'button' | 'reset' | 'submit'
+}
 
 export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
   const {
@@ -408,7 +406,7 @@ export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLB
     ...rest
   } = props
 
-  const hasChildren = () => !!children
+  const hasChildren = useMemo(() => !!children, [children])
 
   return (
     <Component
@@ -419,7 +417,6 @@ export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLB
       className={cx('Button', className)}
       href={as === 'a' && isDisabled ? undefined : href}
       onClick={onClick}
-      active={isActive}
       disabled={isDisabled || isLoading}
       aria-disabled={isDisabled}
       data-active={dataAttr(isActive)}
@@ -428,8 +425,8 @@ export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLB
       floatIcon={floatIcon}
       isDisabled={isDisabled}
       isLoading={isLoading}
+      isActive={isActive}
       isRounded={isRounded}
-      buttonHasChildren={hasChildren()}
       size={size}
       {...rest}
     >
@@ -452,7 +449,7 @@ export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLB
               size={size}
               iconLeft={iconLeft || icon}
               floatIcon={floatIcon}
-              parentHasChildren={hasChildren()}
+              parentHasChildren={hasChildren}
             />
           )}
 
@@ -464,7 +461,7 @@ export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLB
               size={size}
               iconRight={iconRight}
               floatIcon={floatIcon}
-              parentHasChildren={hasChildren()}
+              parentHasChildren={hasChildren}
             />
           )}
         </Fragment>

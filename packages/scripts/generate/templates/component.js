@@ -1,25 +1,23 @@
 module.exports = (componentName) => ({
   content: `import React from 'react'
 import tw, { css, styled, theme } from 'twin.macro'
-import { cx } from '../util'
+import { cx, forwardRef, PropsOf, StyledComponent } from '../util'
 
 export interface ${componentName}Options {
   foo: string
 }
 
-interface ${componentName}Props extends ${componentName}Options, React.HTMLAttributes<HTMLElement> {
-  /** Custom component to be rendered. Defaults to ${`div`}. */
-  as?: React.ElementType<any>
-}
+const Component: StyledComponent<'div', ${componentName}Options> = styled.div(({foo}: ${componentName}Props) => [
+  ${'tw`block`'}
+])
 
-const baseStyles = ${'tw``'}
+type ${componentName}Props = PropsOf<typeof Component>
 
-const Component = styled.div(({ foo }: ${componentName}Props) => [baseStyles, foo && ${'tw``'}])
+export const ${componentName} = forwardRef<${componentName}Props, 'div'>((props: ${componentName}Props, ref: any) => {
+  const { children, className, ...rest } = props
 
-export const ${componentName} = React.forwardRef((props: ${componentName}Props, ref: React.Ref<HTMLElement>) => {
-  const { children, className, as = 'div', ...rest } = props
   return (
-    <Component as={as} className={cx('${componentName}', className)} {...rest}>
+    <Component ref={ref} className={cx('${componentName}', className)} tw="text-sm" {...rest}>
       {children}
     </Component>
   )

@@ -1,16 +1,11 @@
-import React from 'react'
-import tw, { css, styled, theme } from 'twin.macro'
-import { cx } from '../util'
-import { Intent, ElementSize } from '../theme'
+import React, { useMemo } from 'react'
+import tw, { styled } from 'twin.macro'
+import { cx, forwardRef, PropsOf, StyledComponent } from '../util'
+import { Intent, ElementSize, getIntentColor } from '../theme'
 
 export interface DotOptions {
   size?: ElementSize
   intent?: Intent
-}
-
-interface DotProps extends DotOptions, React.HTMLAttributes<HTMLElement> {
-  /** Custom component to be rendered. Defaults to div. */
-  as?: React.ElementType<any>
 }
 
 const sizeStyles = {
@@ -29,37 +24,29 @@ const textSize = {
   xl: tw`text-xl`
 }
 
-const getColor = function (intent: Intent) {
-  const colors: { [key in Intent]?: string } = {
-    primary: theme`colors.primary.600`,
-    secondary: theme`colors.secondary.600`,
-    light: theme`colors.light.300`,
-    dark: theme`colors.dark.600`,
-    info: theme`colors.info.600`,
-    success: theme`colors.success.600`,
-    warning: theme`colors.warning.500`,
-    danger: theme`colors.danger.600`
-  }
-  return colors[intent] || colors['dark']
-}
+const Component: StyledComponent<'span', DotOptions> = styled.span(() => [])
 
-export const Dot = React.forwardRef((props: DotProps, ref: React.Ref<HTMLElement>) => {
-  const { children, className, as = 'span', size = 'md', intent = 'dark', ...rest } = props
+type DotProps = PropsOf<typeof Component>
+
+export const Dot = forwardRef<DotProps, 'span'>((props: DotProps, ref: any) => {
+  const { children, className, size = 'md', intent = 'dark', ...rest } = props
+  const intentColor = useMemo(() => getIntentColor(intent), [intent])
+
   return (
-    <span as={as} className={cx('Dot', className)} tw="inline-flex items-center" {...props}>
+    <Component ref={ref} className={cx('Dot', className)} tw="inline-flex items-center" {...rest}>
       <span
         className="Dot__icon"
         tw="rounded-full select-none"
         css={[
           sizeStyles[size],
           `
-          background-color: ${getColor(intent)};
+          background-color: ${intentColor};
         `
         ]}
       />
       <span className="Dot__label" tw="ml-2 capitalize" css={textSize[size]}>
         {children}
       </span>
-    </span>
+    </Component>
   )
 })

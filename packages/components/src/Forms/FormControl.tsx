@@ -1,5 +1,5 @@
 import React from 'react'
-import { useId, useBoolean } from '../Hooks'
+import { useId, useBoolean } from '../hooks'
 import { cx, createContext, callAllHandlers, ariaAttr, omit } from '../util'
 
 export interface FormControlOptions {

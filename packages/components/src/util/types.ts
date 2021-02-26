@@ -38,6 +38,11 @@ export type As = React.ElementType<any>
 
 export type PropsOf<T extends As> = React.ComponentPropsWithRef<T>
 
+export type WithAs<P, T extends As> = P &
+  Omit<PropsOf<T>, 'as' | keyof P> & {
+    as?: T
+  }
+
 export type PropsWithAs<T extends As, P> = P &
   Omit<React.ComponentPropsWithRef<T>, 'as' | 'color' | keyof P> & {
     as?: T
@@ -57,6 +62,10 @@ export interface ComponentWithAs<T extends As, P> {
    */
   id?: string
 }
+
+export type StyledComponent<T extends As, P> = (
+  props: Omit<PropsOf<T>, 'as' | keyof P> & P & { as?: As; children?: React.ReactNode }
+) => JSX.Element
 
 export function forwardRef<P, T extends As>(
   comp: (
