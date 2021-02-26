@@ -7,6 +7,8 @@ export const Misc = () => {
     <div tw="h-screen bg-white">
       <div tw="container">
         <div tw="p-8 flex space-x-4 flex-wrap">
+          <Dot intent="light" />
+          <Dot intent="dark" />
           <Dot intent="info" />
           <Dot intent="success" />
           <Dot intent="warning" />
