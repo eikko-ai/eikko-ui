@@ -70,7 +70,7 @@ const sizeStyles = (hasChildren: boolean) => {
       xs: tw`p-1`,
       sm: tw`p-1.5`,
       md: tw`p-2`,
-      lg: tw`p-2`,
+      lg: tw`p-2.5`,
       xl: tw`p-3`
     }
   }
@@ -88,15 +88,15 @@ const baseStyles = tw`
 const variantIntentStyles = {
   solid: {
     primary: tw`
-      bg-b_petrol-700
-      hover:bg-b_petrol-800
-      active:bg-b_petrol-900
-      focus:ring-b_petrol-200`,
+      bg-primary-700
+      hover:bg-primary-800
+      active:bg-primary-900
+      focus:ring-primary-200`,
     secondary: tw`
-      bg-b_green-600
-      hover:bg-b_green-700
-      active:bg-b_green-800
-      focus:ring-b_green-300`,
+      bg-secondary-600
+      hover:bg-secondary-700
+      active:bg-secondary-800
+      focus:ring-secondary-300`,
     light: tw`
       text-light-700
       bg-white
@@ -132,17 +132,17 @@ const variantIntentStyles = {
   },
   secondary: {
     primary: tw`
-      text-b_petrol-700
-      bg-b_petrol-100
-      hover:bg-b_petrol-50
-      active:bg-b_petrol-200
-      focus:ring-b_petrol-300`,
+      text-primary-700
+      bg-primary-100
+      hover:bg-primary-50
+      active:bg-primary-200
+      focus:ring-primary-300`,
     secondary: tw`
-      text-b_green-700
-      bg-b_green-100
-      hover:bg-b_green-50
-      active:bg-b_green-200
-      focus:ring-b_green-300`,
+      text-secondary-700
+      bg-secondary-100
+      hover:bg-secondary-50
+      active:bg-secondary-200
+      focus:ring-secondary-300`,
     light: tw`
       text-light-700
       bg-light-100
@@ -182,17 +182,17 @@ const variantIntentStyles = {
   },
   outline: {
     primary: tw`
-      text-b_petrol-700
-      border-b_petrol-500
-      hover:bg-b_petrol-50
-      active:bg-b_petrol-100
-      focus:ring-b_petrol-300`,
+      text-primary-700
+      border-primary-500
+      hover:bg-primary-50
+      active:bg-primary-100
+      focus:ring-primary-300`,
     secondary: tw`
-      text-b_green-700
-      border-b_green-500
-      hover:bg-b_green-50
-      active:bg-b_green-100
-      focus:ring-b_green-300`,
+      text-secondary-700
+      border-secondary-500
+      hover:bg-secondary-50
+      active:bg-secondary-100
+      focus:ring-secondary-300`,
     light: tw`
       text-light-700
       border-light-500
@@ -233,16 +233,16 @@ const variantIntentStyles = {
   },
   ghost: {
     primary: tw`
-      text-b_petrol-700
-      hover:bg-b_petrol-50
-      active:bg-b_petrol-100
-      focus:ring-b_petrol-300
+      text-primary-700
+      hover:bg-primary-50
+      active:bg-primary-100
+      focus:ring-primary-300
       shadow-none`,
     secondary: tw`
-      text-b_green-700
-      hover:bg-b_green-50
-      active:bg-b_green-100
-      focus:ring-b_green-300
+      text-secondary-700
+      hover:bg-secondary-50
+      active:bg-secondary-100
+      focus:ring-secondary-300
       shadow-none`,
     light: tw`
       text-light-700
@@ -283,13 +283,13 @@ const variantIntentStyles = {
   },
   link: {
     primary: tw`
-      text-b_petrol-700
+      text-primary-700
       hover:underline
-      focus:text-b_petrol-900 focus:ring-b_petrol-300
+      focus:text-primary-900 focus:ring-primary-300
       shadow-none`,
     secondary: tw`
-      text-b_green-700
-      focus:ring-b_green-300 focus:text-b_green-900
+      text-secondary-700
+      focus:ring-secondary-300 focus:text-secondary-900
       hover:underline
       shadow-none`,
     light: tw`
@@ -325,11 +325,11 @@ const variantIntentStyles = {
   },
   unstyled: {
     primary: tw`
-      text-b_petrol-700
+      text-primary-700
       shadow-none
       focus:ring-0`,
     secondary: tw`
-      text-b_green-700
+      text-secondary-700
       shadow-none
       focus:ring-0`,
     light: tw`
@@ -448,6 +448,7 @@ export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLB
         <Fragment>
           {(iconLeft || icon) && (
             <ButtonIcon
+              className="Button__icon"
               size={size}
               iconLeft={iconLeft || icon}
               floatIcon={floatIcon}
@@ -459,6 +460,7 @@ export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLB
 
           {iconRight && (
             <ButtonIcon
+              className="Button__icon"
               size={size}
               iconRight={iconRight}
               floatIcon={floatIcon}
@@ -473,7 +475,7 @@ export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLB
 
 // -- ButtonIcon
 
-export type ButtonIconProps = {
+export type ButtonIconProps = React.HTMLAttributes<HTMLElement> & {
   iconLeft?: IconType
   iconRight?: IconType
   floatIcon?: boolean

@@ -4,6 +4,7 @@ import { mount, route, lazy } from 'navi'
 import { Home } from './Home'
 import { Buttons } from './Buttons'
 import { Inputs } from './Inputs'
+import { Misc } from './Misc'
 
 const routes = mount({
   '/': route({
@@ -20,6 +21,12 @@ const routes = mount({
     route({
       title: 'Inputs',
       view: <Inputs />
+    })
+  ),
+  '/misc': lazy(() =>
+    route({
+      title: 'Misc',
+      view: <Misc />
     })
   )
 })

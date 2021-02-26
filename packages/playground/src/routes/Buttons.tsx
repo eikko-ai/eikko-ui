@@ -211,6 +211,14 @@ export const Buttons = () => {
             isRounded
             tw="bg-green-600 text-green-100 shadow-lg"
           />
+
+          <Button icon={<PlusSolidIcon />} size="md" variant="solid" intent="danger" isRounded />
+          <Button icon={<PlusSolidIcon />} size="lg" variant="solid" intent="danger" isRounded />
+
+          <Button icon={<PlusSolidIcon />} size="md" variant="solid" intent="info" />
+          <Button icon={<PlusSolidIcon />} size="md" variant="solid" intent="info">
+            Info
+          </Button>
         </div>
       </div>
     </div>
