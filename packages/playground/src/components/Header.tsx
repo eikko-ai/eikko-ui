@@ -3,7 +3,7 @@ import 'twin.macro'
 
 export const Header = () => {
   return (
-    <header tw="text-gray-300 bg-trueGray-700 shadow-sm">
+    <header tw="text-dark-300 bg-dark-700 shadow-sm">
       <div tw="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
         <a href="/" tw="flex font-medium items-center text-gray-100 mb-4 md:mb-0">
           <span tw="ml-3 text-xl">Kai UI</span>

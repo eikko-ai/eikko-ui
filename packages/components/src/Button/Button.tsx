@@ -1,6 +1,6 @@
 import React, { Fragment, useMemo } from 'react'
 import tw, { styled } from 'twin.macro'
-import { cx, forwardRef, PropsOf, StyledComponent, dataAttr } from '../util'
+import { cx, forwardRef, PropsOf, Comp, dataAttr } from '../util'
 import { Intent, ElementSize } from '../theme'
 import { Icon, IconType } from '../Icon'
 import { Spinner } from '../Spinner'
@@ -45,7 +45,7 @@ export interface ButtonOptions {
   floatIcon?: boolean
   /** Hyperlink for when button is rendered as an anchor link */
   href?: string
-  /** A label required for accessibility when displaying the icon only.  */
+  /** A label required for accessibility when displaying an icon only.  */
   label?: string
 }
 
@@ -352,9 +352,11 @@ const variantIntentStyles = {
   }
 }
 
-const Component: StyledComponent<'button', ButtonOptions> = styled.button(
+const Component: Comp<
+  'button',
+  ButtonOptions
+> = styled.button(
   ({
-    children,
     size = 'md',
     variant = 'solid',
     intent = 'primary',
@@ -363,20 +365,15 @@ const Component: StyledComponent<'button', ButtonOptions> = styled.button(
     isDisabled,
     isLoading,
     isRounded
-  }: ButtonProps) => {
-    const hasChildren = useMemo(() => !!children, [children])
-
-    return [
-      baseStyles,
-      sizeStyles(hasChildren)[size],
-      variantIntentStyles[variant][intent],
-      isWide && tw`w-full`,
-      isUppercase && tw`uppercase`,
-      isDisabled && tw`opacity-40 cursor-default pointer-events-none`,
-      isLoading && tw`opacity-90 cursor-not-allowed!`,
-      isRounded && tw`rounded-full`
-    ]
-  }
+  }: ButtonProps) => [
+    baseStyles,
+    variantIntentStyles[variant][intent],
+    isWide && tw`w-full`,
+    isUppercase && tw`uppercase`,
+    isDisabled && tw`opacity-40 cursor-default pointer-events-none`,
+    isLoading && tw`opacity-90 cursor-not-allowed!`,
+    isRounded && tw`rounded-full`
+  ]
 )
 
 type ButtonProps = PropsOf<typeof Component> & {
@@ -384,91 +381,98 @@ type ButtonProps = PropsOf<typeof Component> & {
   type?: 'button' | 'reset' | 'submit'
 }
 
-export const Button = React.forwardRef((props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
-  const {
-    children,
-    className,
-    as = 'button',
-    type = 'button',
-    size = 'md',
-    isDisabled,
-    isLoading,
-    isActive,
-    icon,
-    iconLeft,
-    iconRight,
-    spinner,
-    loadingText,
-    isRounded,
-    floatIcon,
-    onClick,
-    href,
-    ...rest
-  } = props
+export const Button = forwardRef<ButtonProps, 'button'>(
+  (props: ButtonProps, ref: React.Ref<HTMLButtonElement>) => {
+    const {
+      children,
+      className,
+      as = 'button',
+      type = 'button',
+      size = 'md',
+      isDisabled,
+      isLoading,
+      isActive,
+      icon,
+      iconLeft,
+      iconRight,
+      spinner,
+      loadingText,
+      isRounded,
+      floatIcon,
+      onClick,
+      href,
+      label,
+      ...rest
+    } = props
 
-  const hasChildren = useMemo(() => !!children, [children])
+    const hasChildren = useMemo(() => !!children, [children])
 
-  return (
-    <Component
-      as={as}
-      ref={ref}
-      role="button"
-      type={type}
-      className={cx('Button', className)}
-      href={as === 'a' && isDisabled ? undefined : href}
-      onClick={onClick}
-      disabled={isDisabled || isLoading}
-      aria-disabled={isDisabled}
-      data-active={dataAttr(isActive)}
-      data-loading={dataAttr(isLoading)}
-      tabIndex={isDisabled ? undefined : 0}
-      floatIcon={floatIcon}
-      isDisabled={isDisabled}
-      isLoading={isLoading}
-      isActive={isActive}
-      isRounded={isRounded}
-      size={size}
-      {...rest}
-    >
-      {isLoading && (
-        <Fragment>
-          {spinner ? (
-            spinner
-          ) : (
-            <Spinner delay={50} size={size} css={loadingText && tw`-ml-1 mr-2`} />
-          )}
-          {loadingText && <span tw="ml-2">{loadingText}</span>}
-        </Fragment>
-      )}
+    return (
+      <Component
+        as={as}
+        ref={ref}
+        role="button"
+        type={type}
+        className={cx('Button', className)}
+        href={as === 'a' && isDisabled ? undefined : href}
+        onClick={onClick}
+        disabled={isDisabled || isLoading}
+        aria-disabled={isDisabled}
+        aria-label={label}
+        data-active={dataAttr(isActive)}
+        data-loading={dataAttr(isLoading)}
+        tabIndex={isDisabled ? undefined : 0}
+        floatIcon={floatIcon}
+        isDisabled={isDisabled}
+        isLoading={isLoading}
+        isActive={isActive}
+        isRounded={isRounded}
+        size={size}
+        css={sizeStyles(hasChildren)[size]}
+        {...rest}
+      >
+        {isLoading && (
+          <Fragment>
+            {spinner ? (
+              spinner
+            ) : (
+              <Spinner delay={50} size={size} css={loadingText && tw`-ml-1 mr-2`} />
+            )}
+            {loadingText && <span tw="ml-2">{loadingText}</span>}
+          </Fragment>
+        )}
 
-      {!isLoading && (
-        <Fragment>
-          {(iconLeft || icon) && (
-            <ButtonIcon
-              className="Button__icon"
-              size={size}
-              iconLeft={iconLeft || icon}
-              floatIcon={floatIcon}
-              parentHasChildren={hasChildren}
-            />
-          )}
+        {!isLoading && (
+          <Fragment>
+            {(iconLeft || icon) && (
+              <ButtonIcon
+                className="Button__icon"
+                size={size}
+                iconLeft={iconLeft || icon}
+                floatIcon={floatIcon}
+                label={label}
+                parentHasChildren={hasChildren}
+              />
+            )}
 
-          <div css={[floatIcon && tw`flex-1`]}>{children}</div>
+            <div css={[floatIcon && tw`flex-1`]}>{children}</div>
 
-          {iconRight && (
-            <ButtonIcon
-              className="Button__icon"
-              size={size}
-              iconRight={iconRight}
-              floatIcon={floatIcon}
-              parentHasChildren={hasChildren}
-            />
-          )}
-        </Fragment>
-      )}
-    </Component>
-  )
-})
+            {iconRight && (
+              <ButtonIcon
+                className="Button__icon"
+                size={size}
+                iconRight={iconRight}
+                floatIcon={floatIcon}
+                label={label}
+                parentHasChildren={hasChildren}
+              />
+            )}
+          </Fragment>
+        )}
+      </Component>
+    )
+  }
+)
 
 // -- ButtonIcon
 
@@ -476,6 +480,7 @@ export type ButtonIconProps = React.HTMLAttributes<HTMLElement> & {
   iconLeft?: IconType
   iconRight?: IconType
   floatIcon?: boolean
+  label?: string
   parentHasChildren?: boolean
   size: ElementSize
 }
@@ -510,10 +515,12 @@ export function ButtonIcon({
   iconLeft,
   iconRight,
   floatIcon,
+  label,
   parentHasChildren
 }: ButtonIconProps) {
   return (
     <Fragment>
+      {label && <VisuallyHidden>{label}</VisuallyHidden>}
       {iconLeft && (
         <Icon
           css={[

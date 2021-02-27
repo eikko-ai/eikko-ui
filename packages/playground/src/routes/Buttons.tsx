@@ -8,8 +8,8 @@ export const Buttons = () => {
   const [isLoading, setLoading] = React.useState(false)
 
   return (
-    <div tw="h-screen bg-white">
-      <div tw="px-4 py-8 bg-white">
+    <div tw="h-screen bg-background">
+      <div tw="px-4 py-8 bg-background">
         <div tw="max-w-3xl mx-auto space-y-4 flex flex-col items-center justify-start sm:space-y-0 sm:flex-row sm:items-end sm:justify-around">
           <Button
             as="button"
@@ -34,7 +34,7 @@ export const Buttons = () => {
         </div>
       </div>
 
-      <div tw="px-4 py-8 bg-white">
+      <div tw="px-4 py-8 bg-background">
         <div tw="max-w-3xl mx-auto space-y-4 flex flex-col items-center justify-start sm:space-y-0 sm:flex-row sm:items-end sm:justify-around">
           <Button variant="solid" intent="info">
             Solid Info
@@ -78,7 +78,7 @@ export const Buttons = () => {
         </Button>
       </div>
 
-      <div tw="px-4 py-8 bg-white">
+      <div tw="px-4 py-8 bg-background">
         <div tw="max-w-3xl mx-auto space-y-4 flex flex-col items-center justify-start sm:space-y-0 sm:flex-row sm:items-end sm:justify-around">
           <Button variant="solid" size="xs">
             Solid
@@ -98,7 +98,7 @@ export const Buttons = () => {
         </div>
       </div>
 
-      <div tw="px-4 py-8 bg-white">
+      <div tw="px-4 py-8 bg-background">
         <div tw="max-w-3xl mx-auto space-y-4 flex flex-col items-center justify-start sm:space-y-0 sm:flex-row sm:items-end sm:justify-around">
           <Button variant="solid" size="xs" iconLeft={<ArchiveIcon />}>
             Left Icon
@@ -181,7 +181,7 @@ export const Buttons = () => {
         </Button>
       </div>
 
-      <div tw="px-4 py-8 bg-white">
+      <div tw="px-4 py-8 bg-background">
         <div tw="max-w-3xl mx-auto space-y-4 flex flex-col items-center justify-start sm:space-y-0 sm:flex-row sm:items-end sm:justify-around">
           <Button icon={<StarSolidIcon />} size="xs" />
           <Button icon={<StarSolidIcon />} size="sm" />
@@ -199,7 +199,7 @@ export const Buttons = () => {
         </div>
       </div>
 
-      <div tw="px-4 py-8 bg-white">
+      <div tw="px-4 py-8 bg-background">
         <div tw="max-w-3xl mx-auto space-y-4 flex flex-col items-center justify-start sm:space-y-0 sm:flex-row sm:items-end sm:justify-around">
           <Button icon={<StarSolidIcon />} size="xs" isRounded />
           <Button icon={<StarSolidIcon />} size="sm" isRounded />

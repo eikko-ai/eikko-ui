@@ -13,6 +13,8 @@ export type Intent =
 /** UI Element size, typically ranging from xs to xl. */
 export type ElementSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
+export type Alignment = 'center' | 'left' | 'right' | 'middle' | 'start' | 'end'
+
 export const getIntentColor = function (intent: Intent) {
   const colors: { [key in Intent]?: string } = {
     primary: theme`colors.primary.600`,

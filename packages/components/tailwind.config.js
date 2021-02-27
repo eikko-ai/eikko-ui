@@ -101,7 +101,7 @@ const brandColors = {
 }
 
 module.exports = {
-  // darkMode: 'media',
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -114,8 +114,16 @@ module.exports = {
       },
       colors: {
         ...brandColors,
+
+        background: {
+          DEFAULT: brandColors.b_gray[100],
+          light: brandColors.b_gray[100],
+          dark: brandColors.b_gray[900]
+        },
+
         primary: brandColors.b_petrol,
         secondary: brandColors.b_green,
+
         light: colors.trueGray,
         dark: brandColors.b_gray,
         info: colors.blue,

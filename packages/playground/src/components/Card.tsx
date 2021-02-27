@@ -12,12 +12,12 @@ interface CardProps {
 }
 
 const StyledCard = styled.a(({ color = 'gray' }: Partial<CardProps>) => [
-  tw`block border border-trueGray-700 bg-trueGray-800 p-6 rounded-lg transition-colors duration-500 ease-in-out`,
+  tw`block border border-dark-700 bg-dark-800 p-6 rounded-lg transition-colors duration-500 ease-in-out`,
 
   color === 'blue' && tw`hover:bg-blue-700`,
   color === 'green' && tw`hover:bg-green-700`,
   color === 'red' && tw`hover:bg-red-700`,
-  color === 'teal' && tw`hover:bg-teal-700`
+  color === 'teal' && tw`hover:bg-primary-700`
 ])
 
 const StyledIcon = styled.div(({ color = 'gray' }: Partial<CardProps>) => [
@@ -26,7 +26,7 @@ const StyledIcon = styled.div(({ color = 'gray' }: Partial<CardProps>) => [
   color === 'blue' && tw`bg-blue-50 text-blue-500 `,
   color === 'green' && tw`bg-green-50 text-green-500 `,
   color === 'red' && tw`bg-red-50 text-red-500 `,
-  color === 'teal' && tw`bg-teal-50 text-teal-500 `
+  color === 'teal' && tw`bg-primary-50 text-primary-500 `
 ])
 
 export const Card: React.FC<CardProps> = ({ header, text, link, icon, ...rest }) => {

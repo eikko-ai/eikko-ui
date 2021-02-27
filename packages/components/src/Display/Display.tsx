@@ -1,6 +1,6 @@
 import React from 'react'
-import tw, { css, styled, theme } from 'twin.macro'
-import { cx, forwardRef, PropsOf, StyledComponent } from '../util'
+import tw, { css } from 'twin.macro'
+import { cx, forwardRef, CompProps } from '../util'
 
 export interface DisplayOptions {
   width?: string
@@ -8,17 +8,18 @@ export interface DisplayOptions {
   shadow?: boolean
 }
 
-const Component: StyledComponent<'div', DisplayOptions> = styled.div(({}: DisplayProps) => [
-  tw`block mx-auto my-10 max-w-full`
-])
-
-type DisplayProps = PropsOf<typeof Component>
+type DisplayProps = CompProps<'div', DisplayOptions>
 
 export const Display = forwardRef<DisplayProps, 'div'>((props: DisplayProps, ref: any) => {
   const { children, className, width, shadow = false, caption, ...rest } = props
 
   return (
-    <Component ref={ref} className={cx('Display', className)} {...rest}>
+    <div
+      ref={ref}
+      className={cx('Display', className)}
+      tw="block mx-auto my-10 max-w-full"
+      {...rest}
+    >
       <div
         className="Display__content"
         tw="block max-w-full mx-auto my-0 rounded overflow-hidden"
@@ -43,6 +44,6 @@ export const Display = forwardRef<DisplayProps, 'div'>((props: DisplayProps, ref
       >
         {caption}
       </div>
-    </Component>
+    </div>
   )
 })

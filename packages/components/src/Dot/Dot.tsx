@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import tw, { styled } from 'twin.macro'
-import { cx, forwardRef, PropsOf, StyledComponent } from '../util'
+import { cx, forwardRef, PropsOf, Comp } from '../util'
 import { Intent, ElementSize, getIntentColor } from '../theme'
 
 export interface DotOptions {
@@ -24,7 +24,7 @@ const textSize = {
   xl: tw`text-xl`
 }
 
-const Component: StyledComponent<'span', DotOptions> = styled.span(() => [])
+const Component: Comp<'span', DotOptions> = styled.span(() => [tw`inline-flex items-center`])
 
 type DotProps = PropsOf<typeof Component>
 
@@ -33,7 +33,7 @@ export const Dot = forwardRef<DotProps, 'span'>((props: DotProps, ref: any) => {
   const intentColor = useMemo(() => getIntentColor(intent), [intent])
 
   return (
-    <Component ref={ref} className={cx('Dot', className)} tw="inline-flex items-center" {...rest}>
+    <Component ref={ref} className={cx('Dot', className)} {...rest}>
       <span
         className="Dot__icon"
         tw="rounded-full select-none"

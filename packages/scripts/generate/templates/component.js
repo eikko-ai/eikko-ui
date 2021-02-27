@@ -17,7 +17,7 @@ export const ${componentName} = forwardRef<${componentName}Props, 'div'>((props:
   const { children, className, ...rest } = props
 
   return (
-    <Component ref={ref} className={cx('${componentName}', className)} tw="text-sm" {...rest}>
+    <Component ref={ref} className={cx('${componentName}', className)} {...rest}>
       {children}
     </Component>
   )

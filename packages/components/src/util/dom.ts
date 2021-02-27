@@ -17,6 +17,30 @@ try {
  */
 export const getWindow = (node?: HTMLElement | null) => node?.ownerDocument?.defaultView ?? _window
 
+/**
+ * Check if we can use the DOM. Useful for SSR purposes
+ */
+function checkIsBrowser() {
+  const _window = getWindow()
+  return Boolean(
+    typeof _window !== 'undefined' && _window.document && _window.document.createElement
+  )
+}
+
+export const isBrowser = checkIsBrowser()
+
+/**
+ * Get the normalized event key across all browsers
+ * @param event keyboard event
+ */
+export function normalizeEventKey(event: React.KeyboardEvent) {
+  const { key, keyCode } = event
+
+  const isArrowKey = keyCode >= 37 && keyCode <= 40 && key.indexOf('Arrow') !== 0
+
+  return isArrowKey ? `Arrow${key}` : key
+}
+
 export const dataAttr = (condition: boolean | undefined) =>
   (condition ? '' : undefined) as Booleanish
 
