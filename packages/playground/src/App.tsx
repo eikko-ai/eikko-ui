@@ -3,7 +3,7 @@ import { Router, View } from 'react-navi'
 import { GlobalStyles } from 'twin.macro'
 import { Header } from './components/Header'
 import routes from './routes'
-import { ColorModeProvider } from '@kai/components'
+// import { ColorModeProvider } from '@kai/components'
 
 const App = () => {
   return (
