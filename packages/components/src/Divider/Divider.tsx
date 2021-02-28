@@ -52,6 +52,8 @@ export const Divider = forwardRef<DividerProps, 'div'>(
     const textColor = useMemo(() => getTextColor(intent), [intent])
     const borderColor = useMemo(() => getBorderColor(intent), [intent])
 
+    const childrenIsText = typeof children === 'string'
+
     return (
       <div
         ref={ref}
@@ -71,7 +73,21 @@ export const Divider = forwardRef<DividerProps, 'div'>(
 
         {children && (
           <div className="Divider__content" tw="relative flex justify-center">
-            <span tw="px-2 bg-background dark:bg-background-dark text-sm text-gray-500">
+            <span
+              tw="px-2 text-sm"
+              css={[
+                bg
+                  ? css`
+                      background-color: ${bg};
+                    `
+                  : childrenIsText && tw`bg-background dark:bg-background-dark`,
+                textColor
+                  ? css`
+                      color: ${textColor};
+                    `
+                  : tw`text-gray-500`
+              ]}
+            >
               {children}
             </span>
           </div>

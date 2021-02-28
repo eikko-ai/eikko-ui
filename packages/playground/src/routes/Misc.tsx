@@ -1,6 +1,7 @@
 import React from 'react'
 import { theme } from 'twin.macro'
-import { Dot, Display, Divider } from '@kai/components'
+import { Dot, Display, Divider, Button } from '@kai/components'
+import { PlusIcon } from '@kai/icons'
 
 export const Misc = () => {
   return (
@@ -22,8 +23,22 @@ export const Misc = () => {
 
       <Divider />
 
-      <Divider volume={1} tw="my-16" bg="black">
+      <Divider volume={1} tw="my-16">
         HTTP
+      </Divider>
+
+      <Divider volume={1} tw="my-16" intent="light">
+        <Button size="xs" intent="light">
+          Hello
+        </Button>
+      </Divider>
+
+      <Divider volume={1} tw="my-16 font-medium">
+        Bold Text
+      </Divider>
+
+      <Divider volume={1} tw="my-16" intent="light">
+        <Button intent="light" icon={<PlusIcon />} isRounded />
       </Divider>
     </div>
   )

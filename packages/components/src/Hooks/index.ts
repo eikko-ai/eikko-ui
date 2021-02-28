@@ -1,4 +1,5 @@
 export * from './useBoolean'
 export * from './useId'
+export * from './useLatestRef'
 export * from './useMediaQuery'
 export * from './useSafeLayoutEffect'
