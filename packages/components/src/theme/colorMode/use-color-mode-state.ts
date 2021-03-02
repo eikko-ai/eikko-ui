@@ -8,7 +8,7 @@ import { addListener, ColorMode, getColorScheme, storage, syncBodyClassName } fr
  *
  * @example
  *
- * If mode is 'dark', body will be `<body class="chakra-ui-light"/>`
+ * If mode is 'dark', body will be `<body class="light"/>`
  */
 function useSyncBodyClass(mode: string) {
   React.useEffect(() => {

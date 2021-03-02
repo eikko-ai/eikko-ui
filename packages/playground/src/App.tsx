@@ -3,19 +3,19 @@ import { Router, View } from 'react-navi'
 import { GlobalStyles } from 'twin.macro'
 import { Header } from './components/Header'
 import routes from './routes'
-// import { ColorModeProvider } from '@kai/components'
+import { ThemeProvider } from '@kai/components'
 
 const App = () => {
   return (
     <Router routes={routes}>
       <Suspense fallback={null}>
-        {/* <ColorModeProvider defaultValue={'light'} useSystemColorMode={false}> */}
-        <div className="App">
-          <GlobalStyles />
-          <Header />
-          <View />
-        </div>
-        {/* </ColorModeProvider> */}
+        <ThemeProvider>
+          <div className="App">
+            <GlobalStyles />
+            <Header />
+            <View />
+          </div>
+        </ThemeProvider>
       </Suspense>
     </Router>
   )

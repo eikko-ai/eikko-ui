@@ -1,7 +1,16 @@
 import React from 'react'
 import 'twin.macro'
+import { Button, useColorMode } from '@kai/components'
+import { MoonIcon, SunIcon } from '@kai/icons'
 
 export const Header = () => {
+  const { colorMode, toggleColorMode } = useColorMode()
+
+  const getColorModeIcon = () => {
+    if (colorMode === 'dark') return <SunIcon />
+    return <MoonIcon />
+  }
+
   return (
     <header tw="text-dark-300 bg-dark-700 shadow-sm">
       <div tw="container mx-auto flex flex-wrap p-3 flex-col md:flex-row items-center">
@@ -18,6 +27,12 @@ export const Header = () => {
           <a href="/" tw="mr-5 hover:text-gray-600">
             Third Link
           </a>
+          <Button
+            intent="dark"
+            variant="solid"
+            icon={getColorModeIcon()}
+            onClick={() => toggleColorMode()}
+          ></Button>
         </nav>
       </div>
     </header>
