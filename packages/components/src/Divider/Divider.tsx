@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
 import tw, { css, theme } from 'twin.macro'
 import { cx, forwardRef, CompProps } from '../util'
-import { Intent, Alignment, getIntentColor } from '../theme'
+import { Intent, Alignment } from '../theme'
 
 export type DividerIntent = Intent
 export type DividerAlign = Alignment

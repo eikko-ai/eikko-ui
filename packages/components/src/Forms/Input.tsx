@@ -20,7 +20,15 @@ export interface InputProps
     FormControlOptions,
     React.InputHTMLAttributes<HTMLInputElement> {}
 
-const baseStyles = tw`w-full block shadow-sm border-gray-300 rounded`
+// BUG: There is a bug in styled-components that make GlobaStyles not being imported in the correct way, therefore overwritting our base styles from tailwind forms (styled-components 5.2.1). To fix this for now let's use important!
+const baseStyles = tw`
+    w-full!
+    block!
+    sm:text-sm!
+    border-gray-300! rounded-md!
+    shadow-sm!
+    focus:ring-primary-500! focus:border-primary-500!
+  `
 
 const Component = styled.input(({}: InputProps) => [baseStyles])
 
