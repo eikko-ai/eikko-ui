@@ -1,6 +1,6 @@
 import React from 'react'
-import { GlobalStyles } from 'twin.macro'
 import { ColorModeProvider } from './colorMode'
+import { CSSReset } from './reset'
 
 export interface ThemeProviderProps {
   children: React.ReactNode
@@ -11,8 +11,8 @@ export function ThemeProvider(props: ThemeProviderProps) {
 
   return (
     <>
-      <ColorModeProvider defaultValue={'light'} useSystemColorMode={false}>
-        <GlobalStyles />
+      <ColorModeProvider defaultValue={'dark'} useSystemColorMode={true}>
+        <CSSReset />
         {children}
       </ColorModeProvider>
     </>

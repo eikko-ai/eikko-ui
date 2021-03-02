@@ -20,7 +20,7 @@ export interface InputProps
     FormControlOptions,
     React.InputHTMLAttributes<HTMLInputElement> {}
 
-const baseStyles = tw``
+const baseStyles = tw`w-full block shadow-sm border-gray-300 rounded-md`
 
 const Component = styled.input(({}: InputProps) => [baseStyles])
 
