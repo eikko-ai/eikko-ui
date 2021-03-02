@@ -11,7 +11,7 @@ export function ThemeProvider(props: ThemeProviderProps) {
 
   return (
     <>
-      <ColorModeProvider defaultValue={'dark'} useSystemColorMode={true}>
+      <ColorModeProvider defaultValue={'light'} useSystemColorMode={false}>
         <CSSReset />
         {children}
       </ColorModeProvider>
