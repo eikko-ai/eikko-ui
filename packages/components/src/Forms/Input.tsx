@@ -6,7 +6,7 @@ import { FormControlOptions, useFormControl } from './FormControl'
 
 export type InputSize = ElementSize
 
-export type InputVariant = 'standard' | 'filled' | 'underline' | 'modern' | 'unstyled'
+export type InputVariant = 'standard' | 'solid' | 'underline' | 'unstyled'
 
 export interface InputOptions {
   /** The variant of the input: standard, modern, flushed or unstyled. */

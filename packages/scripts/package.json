@@ -4,8 +4,5 @@
   "version": "1.0.0",
   "scripts": {
     "gen:component": "node ./generate/create-component"
-  },
-  "dependencies": {
-    "chalk": "^4.1.0"
   }
 }
