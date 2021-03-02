@@ -1,6 +1,6 @@
 import React from 'react'
 import 'twin.macro'
-import { Button, FormControl, FormLabel, Input } from '@kai/components'
+import { Button, FormControl, FormLabel, Input, InputGroup } from '@kai/components'
 import { PaperAirplaneIcon } from '@kai/icons'
 
 export const Inputs = () => {
@@ -24,6 +24,12 @@ export const Inputs = () => {
         <Button tw="mt-4" icon={<PaperAirplaneIcon tw="text-primary-400" />} isWide floatIcon>
           Submit
         </Button>
+      </div>
+
+      <div tw="mt-8">
+        <InputGroup>
+          <Input placeholder="you@example.com" />
+        </InputGroup>
       </div>
     </div>
   )

@@ -100,6 +100,52 @@ const brandColors = {
   }
 }
 
+const themeColors = {
+  ...brandColors,
+
+  background: {
+    DEFAULT: brandColors.b_gray[100],
+    light: brandColors.b_gray[100],
+    dark: brandColors.b_gray[900]
+  },
+
+  primary: brandColors.b_petrol,
+  secondary: brandColors.b_green,
+
+  light: colors.trueGray,
+  dark: brandColors.b_gray,
+  info: colors.blue,
+  warning: colors.yellow,
+  success: colors.green,
+  danger: colors.red,
+
+  whiteAlpha: {
+    50: 'rgba(255, 255, 255, 0.04)',
+    100: 'rgba(255, 255, 255, 0.06)',
+    200: 'rgba(255, 255, 255, 0.08)',
+    300: 'rgba(255, 255, 255, 0.16)',
+    400: 'rgba(255, 255, 255, 0.24)',
+    500: 'rgba(255, 255, 255, 0.36)',
+    600: 'rgba(255, 255, 255, 0.48)',
+    700: 'rgba(255, 255, 255, 0.64)',
+    800: 'rgba(255, 255, 255, 0.80)',
+    900: 'rgba(255, 255, 255, 0.92)'
+  },
+
+  blackAlpha: {
+    50: 'rgba(0, 0, 0, 0.04)',
+    100: 'rgba(0, 0, 0, 0.06)',
+    200: 'rgba(0, 0, 0, 0.08)',
+    300: 'rgba(0, 0, 0, 0.16)',
+    400: 'rgba(0, 0, 0, 0.24)',
+    500: 'rgba(0, 0, 0, 0.36)',
+    600: 'rgba(0, 0, 0, 0.48)',
+    700: 'rgba(0, 0, 0, 0.64)',
+    800: 'rgba(0, 0, 0, 0.80)',
+    900: 'rgba(0, 0, 0, 0.92)'
+  }
+}
+
 module.exports = {
   darkMode: 'class',
   theme: {
@@ -112,51 +158,7 @@ module.exports = {
         'spin-slow': 'spin 2000ms linear infinite',
         'spin-fast': 'spin 500ms linear infinite'
       },
-      colors: {
-        ...brandColors,
-
-        background: {
-          DEFAULT: brandColors.b_gray[100],
-          light: brandColors.b_gray[100],
-          dark: brandColors.b_gray[900]
-        },
-
-        primary: brandColors.b_petrol,
-        secondary: brandColors.b_green,
-
-        light: colors.trueGray,
-        dark: brandColors.b_gray,
-        info: colors.blue,
-        warning: colors.yellow,
-        success: colors.green,
-        danger: colors.red,
-
-        whiteAlpha: {
-          50: 'rgba(255, 255, 255, 0.04)',
-          100: 'rgba(255, 255, 255, 0.06)',
-          200: 'rgba(255, 255, 255, 0.08)',
-          300: 'rgba(255, 255, 255, 0.16)',
-          400: 'rgba(255, 255, 255, 0.24)',
-          500: 'rgba(255, 255, 255, 0.36)',
-          600: 'rgba(255, 255, 255, 0.48)',
-          700: 'rgba(255, 255, 255, 0.64)',
-          800: 'rgba(255, 255, 255, 0.80)',
-          900: 'rgba(255, 255, 255, 0.92)'
-        },
-
-        blackAlpha: {
-          50: 'rgba(0, 0, 0, 0.04)',
-          100: 'rgba(0, 0, 0, 0.06)',
-          200: 'rgba(0, 0, 0, 0.08)',
-          300: 'rgba(0, 0, 0, 0.16)',
-          400: 'rgba(0, 0, 0, 0.24)',
-          500: 'rgba(0, 0, 0, 0.36)',
-          600: 'rgba(0, 0, 0, 0.48)',
-          700: 'rgba(0, 0, 0, 0.64)',
-          800: 'rgba(0, 0, 0, 0.80)',
-          900: 'rgba(0, 0, 0, 0.92)'
-        }
-      }
+      colors: themeColors
     }
   },
   variants: {
@@ -166,3 +168,5 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/forms')]
 }
+
+module.exports.themeColors = themeColors
