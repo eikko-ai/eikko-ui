@@ -357,7 +357,6 @@ const Component: Comp<
   ButtonOptions
 > = styled.button(
   ({
-    size = 'md',
     variant = 'solid',
     intent = 'primary',
     isWide,

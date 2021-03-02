@@ -18,7 +18,7 @@
     "clean": "yarn clean:dist & yarn clean:icons",
     "clean:dist": "rimraf dist",
     "clean:icons": "rimraf src .tmp",
-    "mkdirs": "mkdir -p ./src/icons/solid && mkdir -p ./src/icons/outline ",
+    "mkdirs": "mkdir -p ./.tmp/icons && mkdir -p ./src/icons/solid && mkdir -p ./src/icons/outline ",
     "generate": "yarn clean && yarn mkdirs && node ./generate.js",
     "build": "yarn generate && yarn build:uncompressed",
     "build:uncompressed": "microbundle --no-compress --no-sourcemap --jsx React.createElement",

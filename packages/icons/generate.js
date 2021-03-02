@@ -99,7 +99,7 @@ cloner.on('info', (info) => {
   console.log(info.message)
 })
 
-cloner.clone(path.resolve(ICONS_DIR)).then(() => {
+cloner.clone(ICONS_DIR).then(() => {
   console.log('1. HeroIcons repository cloned!')
   console.log('2. Building React components...')
   buildIcons().then(() => console.log('3. Finished building React components.'))
