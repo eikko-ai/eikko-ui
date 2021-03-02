@@ -16,12 +16,12 @@ In order for Kai UI to work correctly, you need to wrap the root of your applica
 
 ```js
 import React from 'react'
-import { ThemeUIProvider, theme } from '@eikko-ai/kai'
+import { ThemeProvider } from '@eikko-ai/kai'
 
 // Use at the root of your app
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider>
       <App />
     </ThemeProvider>
   )
