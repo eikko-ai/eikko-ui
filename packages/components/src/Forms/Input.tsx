@@ -25,9 +25,10 @@ const baseStyles = tw`w-full block shadow-sm border-gray-300 rounded`
 const Component = styled.input(({}: InputProps) => [baseStyles])
 
 export const Input = React.forwardRef((props: InputProps, ref: React.Ref<HTMLInputElement>) => {
+  const { type = 'text' } = props
   const inputProps = useFormControl<HTMLInputElement>(props)
 
   return (
-    <Component ref={ref} className={cx('Input', props.className)} type="text" {...inputProps} />
+    <Component ref={ref} className={cx('Input', props.className)} type={type} {...inputProps} />
   )
 })
