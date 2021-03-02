@@ -1,6 +1,7 @@
 import React from 'react'
 import 'twin.macro'
-import { FormControl, FormLabel, Input } from '@kai/components'
+import { Button, FormControl, FormLabel, Input } from '@kai/components'
+import { PaperAirplaneIcon } from '@kai/icons'
 
 export const Inputs = () => {
   return (
@@ -10,6 +11,19 @@ export const Inputs = () => {
           <FormLabel>Hello</FormLabel>
           <Input placeholder="you@example.com" />
         </FormControl>
+
+        <div tw="mt-4 flex -space-x-px">
+          <div tw="w-1/2 flex-1 min-w-0 mr-2">
+            <Input placeholder="you@example.com" />
+          </div>
+          <div tw="w-1/2 flex-1 min-w-0">
+            <Input placeholder="you@example.com" />
+          </div>
+        </div>
+
+        <Button tw="mt-4" icon={<PaperAirplaneIcon tw="text-primary-400" />} isWide floatIcon>
+          Submit
+        </Button>
       </div>
     </div>
   )

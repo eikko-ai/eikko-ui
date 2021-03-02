@@ -12,7 +12,7 @@ interface CardProps {
 }
 
 const StyledCard = styled.a(({ color = 'gray' }: Partial<CardProps>) => [
-  tw`block border border-dark-700 bg-dark-800 p-6 rounded-lg transition-colors duration-500 ease-in-out`,
+  tw`block border border-dark-600 bg-dark-700 p-6 rounded-lg transition-colors duration-500 ease-in-out`,
 
   color === 'blue' && tw`hover:bg-blue-700`,
   color === 'green' && tw`hover:bg-green-700`,
