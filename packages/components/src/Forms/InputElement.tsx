@@ -1,5 +1,5 @@
 import React from 'react'
-import tw, { css } from 'twin.macro'
+import tw from 'twin.macro'
 import { cx, forwardRef, CompProps, omit } from '../util'
 import { useSafeLayoutEffect } from '../hooks'
 import { InputOptions, useInputStyle } from './Input'
@@ -21,22 +21,7 @@ const InputElement = forwardRef<InputElementProps, 'div'>((props: InputElementPr
 
   const styles = useInputStyle()
 
-  return (
-    <div
-      ref={ref}
-      // css={[
-      //   css`
-      //     ${placement}:0;
-      //   `,
-      //   field.isDisabled && tw`opacity-40`,
-      //   // field.isInvalid && errorBorderColor && tw`text-red-500`,
-      //   tw`text-gray-500`,
-      //   styles.size[inputSize]
-      // ]}
-      css={[styles.size[inputSize]]}
-      {...elementProps}
-    />
-  )
+  return <div ref={ref} css={[tw`text-gray-500`]} {...elementProps} />
 })
 
 export const InputLeftElement = forwardRef<InputElementProps, 'div'>(

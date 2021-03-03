@@ -1,4 +1,5 @@
 import React, { useState, useCallback, cloneElement } from 'react'
+import 'twin.macro'
 import { cx, forwardRef, createContext } from '../util'
 import { InputProps } from './Input'
 
@@ -55,6 +56,8 @@ export const InputGroup = forwardRef<InputGroupProps, 'div'>((props: InputGroupP
     return cloneElement(child, {
       inputSize: child.props.inputSize || context.inputSize,
       variant: child.props.variant || context.variant
+      // focusBorderColor: child.props.focusBorderColor || context.focusBorderColor,
+      // errorBorderColor: child.props.errorBorderColor || context.errorBorderColor,
     })
   })
 
