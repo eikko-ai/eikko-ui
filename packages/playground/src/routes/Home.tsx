@@ -4,7 +4,7 @@ import { Card } from '../components/Card'
 
 export const Home = () => {
   return (
-    <section tw="h-screen bg-background dark:bg-background-dark text-white font-sans">
+    <section>
       <div tw="container px-5 py-24 mx-auto">
         <div tw="md:flex flex-wrap -m-4">
           <div tw="xl:w-1/3 md:w-1/2 p-4">

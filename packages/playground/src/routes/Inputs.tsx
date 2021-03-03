@@ -1,15 +1,23 @@
 import React from 'react'
 import 'twin.macro'
-import { Button, FormControl, FormLabel, Input, InputGroup } from '@kai/components'
-import { PaperAirplaneIcon } from '@kai/icons'
+import {
+  Divider,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputLeftElement
+} from '@kai/components'
+import { PaperAirplaneSolidIcon, MailSolidIcon } from '@kai/icons'
 
 export const Inputs = () => {
   return (
-    <div tw="h-screen bg-background dark:bg-background-dark">
-      <div tw="p-8">
+    <div>
+      <div tw="px-32 py-16 mx-auto max-w-7xl">
         <FormControl isRequired>
           <FormLabel>Hello</FormLabel>
-          <Input placeholder="you@example.com" />
+          <Input placeholder="you@example.com" defaultValue="admin@iki.ai" />
         </FormControl>
 
         <div tw="mt-4 flex -space-x-px">
@@ -17,19 +25,35 @@ export const Inputs = () => {
             <Input placeholder="you@example.com" />
           </div>
           <div tw="w-1/2 flex-1 min-w-0">
-            <Input placeholder="you@example.com" />
+            <Input placeholder="you@example.com" isDisabled />
           </div>
         </div>
 
-        <Button tw="mt-4" icon={<PaperAirplaneIcon tw="text-primary-400" />} isWide floatIcon>
+        <Button
+          tw="mt-4"
+          icon={<PaperAirplaneSolidIcon tw="text-primary-500 opacity-60" />}
+          isWide
+          floatIcon
+        >
           Submit
         </Button>
       </div>
 
-      <div tw="mt-8">
-        <InputGroup>
-          <Input placeholder="you@example.com" />
-        </InputGroup>
+      <Divider tw="font-medium" intent="light">
+        FORMS
+      </Divider>
+
+      <div tw="px-32 py-16 mx-auto max-w-7xl">
+        <FormControl isRequired isDisabled>
+          <FormLabel>Email</FormLabel>
+          <InputGroup>
+            <Input name="email" type="email" placeholder="Email address" />
+            <InputLeftElement>
+              <MailSolidIcon />
+            </InputLeftElement>
+          </InputGroup>
+          {/* <FormErrorMessage>{errors.email?.message}</FormErrorMessage>  */}
+        </FormControl>
       </div>
     </div>
   )

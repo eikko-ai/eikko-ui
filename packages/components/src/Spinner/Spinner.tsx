@@ -22,6 +22,13 @@ interface SpinnerProps extends SpinnerOptions, React.HTMLAttributes<HTMLElement>
   as?: React.ElementType<any>
 }
 
+const baseStyles = tw`
+  flex
+  transition-opacity
+  duration-500
+  ease-in-out
+`
+
 const sizeStyles = {
   xs: tw`w-2 h-2`,
   sm: tw`w-3 h-3`,
@@ -29,13 +36,6 @@ const sizeStyles = {
   lg: tw`w-5 h-5`,
   xl: tw`w-6 h-6`
 }
-
-const baseStyles = tw`
-  flex
-  transition-opacity
-  duration-500
-  ease-in-out
-`
 
 const Component = styled.div(({ isCentered }: SpinnerProps) => [
   baseStyles,

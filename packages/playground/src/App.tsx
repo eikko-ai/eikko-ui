@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react'
+import 'twin.macro'
 import { Router, View } from 'react-navi'
-import { GlobalStyles } from 'twin.macro'
 import { Header } from './components/Header'
 import routes from './routes'
 import { ThemeProvider } from '@kai/components'
@@ -10,8 +10,10 @@ const App = () => {
     <Router routes={routes}>
       <Suspense fallback={null}>
         <ThemeProvider>
-          <div className="App">
-            <GlobalStyles />
+          <div
+            className="App"
+            tw="h-screen overflow-auto bg-background dark:bg-background-dark text-white font-sans"
+          >
             <Header />
             <View />
           </div>

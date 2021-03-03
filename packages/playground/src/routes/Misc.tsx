@@ -5,7 +5,7 @@ import { PlusIcon } from '@kai/icons'
 
 export const Misc = () => {
   return (
-    <div tw="h-screen bg-background dark:bg-background-dark">
+    <div>
       <div tw="p-8 flex space-x-4 flex-wrap">
         <Display shadow caption="Wish I was here!" width="400px">
           <img src="https://unsplash.it/640/425?random" alt="" />

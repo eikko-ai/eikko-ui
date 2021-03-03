@@ -17,11 +17,13 @@ export interface DividerOptions {
   volume?: number
 }
 
+type DividerProps = CompProps<'div', DividerOptions>
+
 const getTextColor = function (intent: Intent) {
   const colors: { [key in Intent]?: string } = {
     primary: theme`colors.primary.500`,
     secondary: theme`colors.secondary.500`,
-    light: theme`colors.light.500`,
+    light: theme`colors.light.400`,
     dark: theme`colors.dark.500`,
     info: theme`colors.info.500`,
     success: theme`colors.success.500`,
@@ -35,7 +37,7 @@ const getBorderColor = function (intent: Intent) {
   const colors: { [key in Intent]?: string } = {
     primary: theme`colors.primary.300`,
     secondary: theme`colors.secondary.300`,
-    light: theme`colors.light.300`,
+    light: theme`colors.light.200`,
     dark: theme`colors.dark.300`,
     info: theme`colors.info.300`,
     success: theme`colors.success.300`,
@@ -44,8 +46,6 @@ const getBorderColor = function (intent: Intent) {
   }
   return colors[intent] || colors['dark']
 }
-
-type DividerProps = CompProps<'div', DividerOptions>
 
 export const Divider = forwardRef<DividerProps, 'div'>(
   ({ children, className, intent = 'dark', bg, ...rest }: DividerProps, ref: any) => {

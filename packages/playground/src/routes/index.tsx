@@ -5,6 +5,7 @@ import { Home } from './Home'
 import { Buttons } from './Buttons'
 import { Inputs } from './Inputs'
 import { Misc } from './Misc'
+import { Typography } from './Typography'
 
 const routes = mount({
   '/': route({
@@ -27,6 +28,12 @@ const routes = mount({
     route({
       title: 'Misc',
       view: <Misc />
+    })
+  ),
+  '/typography': lazy(() =>
+    route({
+      title: 'Typography',
+      view: <Typography />
     })
   )
 })
