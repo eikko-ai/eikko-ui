@@ -86,44 +86,44 @@ export function useButtonStyle() {
           bg-primary-700
           hover:bg-primary-800
           active:bg-primary-900
-          focus:ring-primary-200 focus:ring-opacity-60`,
+          focus:ring-primary-200 focus:ring-opacity-80`,
         secondary: tw`
           bg-secondary-600
           hover:bg-secondary-700
           active:bg-secondary-800
-          focus:ring-secondary-300 focus:ring-opacity-60`,
+          focus:ring-secondary-300 focus:ring-opacity-80`,
         light: tw`
           text-light-700
           bg-white
           border-light-300
           hover:bg-light-50
           active:bg-light-100
-          focus:ring-gray-200 focus:ring-opacity-60`,
+          focus:ring-gray-200 focus:ring-opacity-80`,
         dark: tw`
           bg-dark-800
           hover:bg-dark-700
           active:bg-dark-600
-          focus:ring-gray-300 focus:ring-opacity-60`,
+          focus:ring-gray-300 focus:ring-opacity-80`,
         info: tw`
           bg-info-600
           hover:bg-info-700
           active:bg-info-800
-          focus:ring-info-300 focus:ring-opacity-60`,
+          focus:ring-info-300 focus:ring-opacity-80`,
         success: tw`
           bg-success-600
           hover:bg-success-700
           active:bg-success-800
-          focus:ring-success-300 focus:ring-opacity-60`,
+          focus:ring-success-300 focus:ring-opacity-80`,
         warning: tw`
           bg-warning-600
           hover:bg-warning-700
           active:bg-warning-800
-          focus:ring-warning-400 focus:ring-opacity-60`,
+          focus:ring-warning-400 focus:ring-opacity-80`,
         danger: tw`
           bg-danger-600
           hover:bg-danger-700
           active:bg-danger-800
-          focus:ring-danger-300 focus:ring-opacity-60`
+          focus:ring-danger-300 focus:ring-opacity-80`
       },
       secondary: {
         primary: tw`
@@ -131,49 +131,49 @@ export function useButtonStyle() {
           bg-primary-100
           hover:bg-primary-50
           active:bg-primary-200
-          focus:ring-primary-300 focus:ring-opacity-60`,
+          focus:ring-primary-300 focus:ring-opacity-80`,
         secondary: tw`
           text-secondary-700
           bg-secondary-100
           hover:bg-secondary-50
           active:bg-secondary-200
-          focus:ring-secondary-300 focus:ring-opacity-60`,
+          focus:ring-secondary-300 focus:ring-opacity-80`,
         light: tw`
           text-light-700
           bg-light-100
           hover:bg-light-50
           active:bg-light-200
-          focus:ring-light-200 focus:ring-opacity-60`,
+          focus:ring-light-200 focus:ring-opacity-80`,
         dark: tw`
           text-dark-700
           bg-dark-200
           hover:bg-dark-100
           active:bg-light-300
-          focus:ring-dark-300 focus:ring-opacity-60`,
+          focus:ring-dark-300 focus:ring-opacity-80`,
         info: tw`
           text-info-700
           bg-info-100
           hover:bg-info-50
           active:bg-info-200
-          focus:ring-info-300 focus:ring-opacity-60`,
+          focus:ring-info-300 focus:ring-opacity-80`,
         success: tw`
           text-success-700
           bg-success-100
           hover:bg-success-50
           active:bg-success-200
-          focus:ring-success-300 focus:ring-opacity-60`,
+          focus:ring-success-300 focus:ring-opacity-80`,
         warning: tw`
           text-warning-700
           bg-warning-100
           hover:bg-warning-50
           active:bg-warning-200
-          focus:ring-warning-300 focus:ring-opacity-60`,
+          focus:ring-warning-300 focus:ring-opacity-80`,
         danger: tw`
           text-danger-700
           bg-danger-100
           hover:bg-danger-50
           active:bg-danger-200
-          focus:ring-danger-300 focus:ring-opacity-60`
+          focus:ring-danger-300 focus:ring-opacity-80`
       },
       outline: {
         primary: tw`
@@ -181,141 +181,141 @@ export function useButtonStyle() {
           border-primary-500
           hover:bg-primary-50
           active:bg-primary-100
-          focus:ring-primary-300 focus:ring-opacity-60`,
+          focus:ring-primary-300 focus:ring-opacity-80`,
         secondary: tw`
           text-secondary-700
           border-secondary-500
           hover:bg-secondary-50
           active:bg-secondary-100
-          focus:ring-secondary-300 focus:ring-opacity-60`,
+          focus:ring-secondary-300 focus:ring-opacity-80`,
         light: tw`
           text-light-700
           border-light-500
           hover:bg-light-50
           active:bg-light-100
-          focus:ring-light-200 focus:ring-opacity-60`,
+          focus:ring-light-200 focus:ring-opacity-80`,
         dark: tw`
           text-dark-700
           border-dark-500
           bg-dark-50
           hover:bg-dark-200
           active:bg-dark-300
-          focus:ring-dark-300 focus:ring-opacity-60`,
+          focus:ring-dark-300 focus:ring-opacity-80`,
         info: tw`
           text-info-700
           border-info-500
           hover:bg-info-50
           active:bg-info-100
-          focus:ring-info-300 focus:ring-opacity-60`,
+          focus:ring-info-300 focus:ring-opacity-80`,
         success: tw`
           text-success-700
           border-success-500
           hover:bg-success-50
           active:bg-success-100
-          focus:ring-success-300 focus:ring-opacity-60`,
+          focus:ring-success-300 focus:ring-opacity-80`,
         warning: tw`
           text-warning-700
           border-warning-500
           hover:bg-warning-50
           active:bg-warning-100
-          focus:ring-warning-300 focus:ring-opacity-60`,
+          focus:ring-warning-300 focus:ring-opacity-80`,
         danger: tw`
           text-danger-700
           border-danger-500
           hover:bg-danger-50
           active:bg-danger-100
-          focus:ring-danger-300 focus:ring-opacity-60`
+          focus:ring-danger-300 focus:ring-opacity-80`
       },
       ghost: {
         primary: tw`
           text-primary-700
           hover:bg-primary-50
           active:bg-primary-100
-          focus:ring-primary-300 focus:ring-opacity-60
+          focus:ring-primary-300 focus:ring-opacity-80
           shadow-none`,
         secondary: tw`
           text-secondary-700
           hover:bg-secondary-50
           active:bg-secondary-100
-          focus:ring-secondary-300 focus:ring-opacity-60
+          focus:ring-secondary-300 focus:ring-opacity-80
           shadow-none`,
         light: tw`
           text-light-700
           hover:bg-light-50
           active:bg-light-100
-          focus:ring-light-200 focus:ring-opacity-60
+          focus:ring-light-200 focus:ring-opacity-80
           shadow-none`,
         dark: tw`
           text-dark-700
           hover:bg-dark-200
           active:bg-dark-300
-          focus:ring-dark-300 focus:ring-opacity-60
+          focus:ring-dark-300 focus:ring-opacity-80
           shadow-none`,
         info: tw`
           text-info-700
           hover:bg-info-50
           active:bg-info-100
-          focus:ring-info-300 focus:ring-opacity-60
+          focus:ring-info-300 focus:ring-opacity-80
           shadow-none`,
         success: tw`
           text-success-700
           hover:bg-success-50
           active:bg-success-100
-          focus:ring-success-300 focus:ring-opacity-60
+          focus:ring-success-300 focus:ring-opacity-80
           shadow-none`,
         warning: tw`
           text-warning-700
           hover:bg-warning-50
           active:bg-warning-100
-          focus:ring-warning-300 focus:ring-opacity-60
+          focus:ring-warning-300 focus:ring-opacity-80
           shadow-none`,
         danger: tw`
           text-danger-700
           hover:bg-danger-50
           active:bg-danger-100
-          focus:ring-danger-300 focus:ring-opacity-60
+          focus:ring-danger-300 focus:ring-opacity-80
           shadow-none`
       },
       link: {
         primary: tw`
           text-primary-700
           hover:underline
-          focus:text-primary-900 focus:ring-primary-300 focus:ring-opacity-60
+          focus:text-primary-900 focus:ring-primary-300 focus:ring-opacity-80
           shadow-none`,
         secondary: tw`
           text-secondary-700
-          focus:text-secondary-900 focus:ring-secondary-300 focus:ring-opacity-60
+          focus:text-secondary-900 focus:ring-secondary-300 focus:ring-opacity-80
           hover:underline
           shadow-none`,
         light: tw`
           text-gray-700
           hover:underline
-          focus:text-light-900 focus:ring-light-200 focus:ring-opacity-60
+          focus:text-light-900 focus:ring-light-200 focus:ring-opacity-80
           shadow-none`,
         dark: tw`
           text-dark-700
           hover:underline
-          focus:text-dark-900 focus:ring-dark-300 focus:ring-opacity-60
+          focus:text-dark-900 focus:ring-dark-300 focus:ring-opacity-80
           shadow-none`,
         info: tw`
           text-info-700
           hover:underline
-          focus:text-info-900 focus:ring-info-300 focus:ring-opacity-60
+          focus:text-info-900 focus:ring-info-300 focus:ring-opacity-80
           shadow-none`,
         success: tw`
           text-success-700
           hover:underline
-          focus:text-success-900 focus:ring-success-300 focus:ring-opacity-60
+          focus:text-success-900 focus:ring-success-300 focus:ring-opacity-80
           shadow-none`,
         warning: tw`
           text-warning-700
           hover:underline
-          focus:text-warning-900 focus:ring-warning-300 focus:ring-opacity-60
+          focus:text-warning-900 focus:ring-warning-300 focus:ring-opacity-80
           shadow-none`,
         danger: tw`
           text-danger-700
           hover:underline
-          focus:text-danger-900 focus:ring-danger-300 focus:ring-opacity-60
+          focus:text-danger-900 focus:ring-danger-300 focus:ring-opacity-80
           shadow-none`
       },
       unstyled: {
