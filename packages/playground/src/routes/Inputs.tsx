@@ -7,9 +7,10 @@ import {
   FormLabel,
   Input,
   InputGroup,
-  InputLeftElement
+  InputLeftElement,
+  InputRightElement
 } from '@kai/components'
-import { PaperAirplaneSolidIcon, MailSolidIcon } from '@kai/icons'
+import { PaperAirplaneSolidIcon, MailSolidIcon, UserCircleIcon } from '@kai/icons'
 
 export const Inputs = () => {
   return (
@@ -53,6 +54,48 @@ export const Inputs = () => {
             </InputLeftElement>
           </InputGroup>
           {/* <FormErrorMessage>{errors.email?.message}</FormErrorMessage>  */}
+        </FormControl>
+
+        <FormControl tw="mt-8" isRequired>
+          <FormLabel>Age</FormLabel>
+          <InputGroup>
+            <Input name="age" placeholder="Age" />
+            <InputLeftElement>
+              <UserCircleIcon />
+            </InputLeftElement>
+          </InputGroup>
+          {/* <FormErrorMessage>{errors.email?.message}</FormErrorMessage>  */}
+        </FormControl>
+
+        <FormControl isInvalid tw="mt-8">
+          <FormLabel>First Name</FormLabel>
+          <InputGroup>
+            <Input name="firstName" placeholder="First Name" />
+            <InputRightElement>
+              <MailSolidIcon />
+            </InputRightElement>
+          </InputGroup>
+          {/* <FormErrorMessage>{errors.email?.message}</FormErrorMessage>  */}
+        </FormControl>
+
+        <div tw="mt-8">
+          <FormLabel>Last Name</FormLabel>
+          <Input name="lastName" placeholder="Last Name" isInvalid />
+        </div>
+
+        <div tw="mt-8">
+          <FormLabel>Read Only</FormLabel>
+          <Input name="readonly" placeholder="Read Only" defaultValue="admin@iki.ai" readOnly />
+        </div>
+
+        <FormControl tw="mt-8" isInvalid>
+          <FormLabel>Size</FormLabel>
+          <InputGroup inputSize="lg">
+            <Input name="size" placeholder="Size" />
+            <InputLeftElement>
+              <UserCircleIcon />
+            </InputLeftElement>
+          </InputGroup>
         </FormControl>
       </div>
     </div>

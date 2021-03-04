@@ -26,7 +26,7 @@
     "build": "yarn clean && yarn build:ts && yarn build:js",
     "watch:ts": "tsc --watch",
     "watch:js": "rollup -c --watch",
-    "watch": "yarn clean && yarn watch:ts & yarn watch:js",
+    "watch": "yarn watch:ts & yarn watch:js",
     "storybook": "start-storybook -p 6060",
     "storybook:export": "build-storybook",
     "lint": "eslint . --ignore-path ./.gitignore",

@@ -43,11 +43,10 @@ export const FormLabel = forwardRef<FormLabelProps, 'label'>(
 )
 
 export const RequiredIndicator = (props: React.HTMLAttributes<HTMLSpanElement>) => {
-  const { isRequired, isDisabled } = useFormControlContext()
+  const field = useFormControlContext()
+  if (!field || !field.isRequired) return null
 
   const _className = cx('RequiredIndicator', props.className)
-
-  if (!isRequired) return null
 
   return (
     <span
@@ -56,7 +55,7 @@ export const RequiredIndicator = (props: React.HTMLAttributes<HTMLSpanElement>) 
       role="presentation"
       aria-hidden="true"
       title="Required"
-      css={[tw`ml-1`, isDisabled ? tw`text-red-300` : tw`text-red-500`]}
+      css={[tw`ml-1`, field.isDisabled ? tw`text-red-300` : tw`text-red-500`]}
     >
       {props.children || '*'}
     </span>

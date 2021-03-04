@@ -20,6 +20,7 @@
     "clean:icons": "yarn workspace @kai/icons clean",
     "clean:playground": "yarn workspace @kai/playground clean",
     "reset": "yarn clean && rm -rf node_modules .yarn/cache",
+    "prestart": "yarn clean:components",
     "start": "yarn workspace @kai/components watch & yarn workspace @kai/playground start",
     "build": "yarn build:components & yarn build:icons",
     "build:components": "yarn workspace @kai/components build",
