@@ -9,7 +9,7 @@ export interface PortalProps {
 
 let container: Element | null = null
 
-export const Portal: React.FunctionComponent<PortalProps> = ({ children }) => {
+export const Portal: React.FC<PortalProps> = ({ children }) => {
   const [target] = React.useState<HTMLDivElement | null>(() => {
     if (!isBrowser) {
       return null
