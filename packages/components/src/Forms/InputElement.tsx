@@ -1,5 +1,5 @@
 import React from 'react'
-import tw, { css } from 'twin.macro'
+import tw from 'twin.macro'
 import { cx, forwardRef, CompProps, omit } from '../util'
 import { useSafeLayoutEffect } from '../hooks'
 import { InputOptions } from './Input'
