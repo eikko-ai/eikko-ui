@@ -1,4 +1,4 @@
-import { Dot, Display, Divider, Button } from '@kai/components'
+import { Dot, Display, Divider, Button, Box } from '@kai/components'
 import { PlusIcon } from '@kai/icons'
 
 export const Misc = () => {
@@ -38,6 +38,10 @@ export const Misc = () => {
       <Divider volume={1} className="my-16" intent="light">
         <Button intent="light" icon={<PlusIcon />} isRounded />
       </Divider>
+
+      <Box className="p-8" elevation="sm" hoverElevation="lg" isLoading spinnerSize="32px">
+        Jello World
+      </Box>
     </div>
   )
 }

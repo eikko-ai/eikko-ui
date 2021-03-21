@@ -10,6 +10,7 @@ export interface DisplayOptions {
 
 type DisplayProps = CompProps<'div', DisplayOptions>
 
+//** A component to put content into emphasize content. */
 export const Display = forwardRef<DisplayProps, 'div'>((props: DisplayProps, ref: any) => {
   const { children, className, width, shadow = false, caption, ...rest } = props
 

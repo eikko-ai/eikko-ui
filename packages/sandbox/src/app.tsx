@@ -6,7 +6,7 @@ import { Header } from './components'
 export function App() {
   return (
     <ThemeProvider>
-      <div className="h-screen overflow-auto bg-background dark:bg-background-dark text-white font-sans">
+      <div className="h-screen overflow-auto bg-background dark:bg-background-dark font-sans">
         <Header />
 
         <Route path="/">

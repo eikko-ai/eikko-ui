@@ -6,7 +6,9 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
-  InputRightElement
+  InputRightElement,
+  FormErrorMessage,
+  FormHelperText
 } from '@kai/components'
 import { PaperAirplaneSolidIcon, MailSolidIcon, UserCircleIcon } from '@kai/icons'
 
@@ -39,7 +41,7 @@ export const Inputs = () => {
       </div>
 
       <Divider className="font-medium" intent="light">
-        FORMS
+        ERRORS
       </Divider>
 
       <div className="px-32 py-16 mx-auto max-w-7xl">
@@ -62,7 +64,7 @@ export const Inputs = () => {
               <UserCircleIcon />
             </InputLeftElement>
           </InputGroup>
-          {/* <FormErrorMessage>{errors.email?.message}</FormErrorMessage>  */}
+          <FormHelperText>This is some help Text!</FormHelperText>
         </FormControl>
 
         <FormControl isInvalid className="mt-8">
@@ -73,7 +75,7 @@ export const Inputs = () => {
               <MailSolidIcon />
             </InputRightElement>
           </InputGroup>
-          {/* <FormErrorMessage>{errors.email?.message}</FormErrorMessage>  */}
+          <FormErrorMessage>Small Password</FormErrorMessage>
         </FormControl>
 
         <div className="mt-8">
