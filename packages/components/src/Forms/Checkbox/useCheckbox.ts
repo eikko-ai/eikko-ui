@@ -1,3 +1,5 @@
+export const useCheckBox = () => {}
+
 // import React, { useCallback, ChangeEvent, KeyboardEvent, useRef, useState } from 'react'
 // import { useBoolean, useControllableProp, useSafeLayoutEffect } from './hooks'
 // import { callAllHandlers, dataAttr, mergeRefs, PropGetter } from './util'

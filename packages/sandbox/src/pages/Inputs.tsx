@@ -92,7 +92,10 @@ export const Inputs = () => {
           </InputGroup>
         </FormControl>
 
-        <Textarea className="mt-8" rows="12" />
+        <FormControl className="mt-8" isDisabled>
+          <FormLabel>Bio</FormLabel>
+          <Textarea rows="3" cols="7" />
+        </FormControl>
       </div>
 
       <Divider className="font-medium" intent="light">

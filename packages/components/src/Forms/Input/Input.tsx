@@ -1,6 +1,6 @@
 import React from 'react'
 import tw, { css } from 'twin.macro'
-import { cx, CompProps } from '../../util'
+import { cx, forwardRef, CompProps } from '../../util'
 import { ElementSize } from '../../theme'
 import { FormControlOptions, useFormControl, useFormControlContext } from '../FormControl'
 import { useInputGroup } from './InputGroup'
@@ -19,7 +19,7 @@ export interface InputOptions {
 export interface InputProps extends CompProps<'input', InputOptions>, FormControlOptions {}
 
 // BUG: There is a bug in styled-components that make GlobaStyles not being imported in the correct way, therefore overwritting our base styles from tailwind forms (styled-components 5.2.1). To fix this for now let's use important!
-export function useInputStyle(props?: InputProps) {
+export function useInputStyle() {
   return {
     base: [
       tw`w-full block transition-colors`,
@@ -95,40 +95,42 @@ export function useInputStyle(props?: InputProps) {
   }
 }
 
-export const Input = React.forwardRef((props: InputProps, ref: React.Ref<HTMLInputElement>) => {
-  const { type = 'text', inputSize } = props
-  const inputProps = useFormControl<HTMLInputElement>(props)
-  const field = useFormControlContext()
-  const group = useInputGroup()
-  const styles = useInputStyle(props)
+export const Input = forwardRef<InputProps, 'input'>(
+  (props: InputProps, ref: React.Ref<HTMLInputElement>) => {
+    const { type = 'text', inputSize } = props
+    const inputProps = useFormControl<HTMLInputElement>(props)
+    const field = useFormControlContext()
+    const group = useInputGroup()
+    const styles = useInputStyle()
 
-  const size = inputSize ?? group?.inputSize ?? 'md'
+    const size = inputSize ?? group?.inputSize ?? 'md'
 
-  const variant = props.variant ?? group?.variant ?? 'standard'
-  const isDisabled = inputProps.disabled
-  const isReadOnly = props.isReadOnly ?? field?.isReadOnly
-  const isInvalid = props.isInvalid ?? field?.isInvalid
+    const variant = props.variant ?? group?.variant ?? 'standard'
+    const isDisabled = inputProps.disabled
+    const isReadOnly = props.isReadOnly ?? field?.isReadOnly
+    const isInvalid = props.isInvalid ?? field?.isInvalid
 
-  const inputStyle = [
-    styles.base,
-    styles.size[size],
-    styles.variants[variant],
-    isInvalid && styles.error,
-    isDisabled && styles.disabled,
-    isReadOnly && styles.readOnly,
-    group?.leftElement?.isMounted && styles.leftElement[size],
-    group?.rightElement?.isMounted && styles.rightElement[size],
-    group?.leftAddon?.isMounted && styles.leftAddon,
-    group?.rightAddon?.isMounted && styles.rightAddon
-  ]
+    const inputStyle = [
+      styles.base,
+      styles.size[size],
+      styles.variants[variant],
+      isInvalid && styles.error,
+      isDisabled && styles.disabled,
+      isReadOnly && styles.readOnly,
+      group?.leftElement?.isMounted && styles.leftElement[size],
+      group?.rightElement?.isMounted && styles.rightElement[size],
+      group?.leftAddon?.isMounted && styles.leftAddon,
+      group?.rightAddon?.isMounted && styles.rightAddon
+    ]
 
-  return (
-    <input
-      ref={ref}
-      className={cx('Input', props.className)}
-      type={type}
-      css={inputStyle}
-      {...inputProps}
-    />
-  )
-})
+    return (
+      <input
+        ref={ref}
+        className={cx('Input', props.className)}
+        type={type}
+        css={inputStyle}
+        {...inputProps}
+      />
+    )
+  }
+)

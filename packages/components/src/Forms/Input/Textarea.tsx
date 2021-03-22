@@ -1,38 +1,45 @@
 import React from 'react'
 import tw, { styled } from 'twin.macro'
-import { cx, forwardRef, Comp, CompProps } from '../../util'
-import { FormControlOptions, useFormControl } from '../FormControl'
-import { InputOptions, Input } from './Input'
+import { cx, forwardRef, CompProps } from '../../util'
+import { FormControlOptions, useFormControl, useFormControlContext } from '../FormControl'
+import { useInputGroup } from './InputGroup'
+import { useInputStyle, InputVariant } from './Input'
 
-export interface TextareaOptions extends InputOptions {}
+export interface TextareaOptions {
+  /** The variant of the textarea input: standard, modern, flushed or unstyled. */
+  variant?: InputVariant
+}
 
-export type TextareaProps = FormControlOptions & CompProps<'textarea', TextareaOptions>
+export interface TextareaProps extends CompProps<'textarea'>, TextareaOptions, FormControlOptions {}
 
-const StyledTextarea: Comp<'textarea', TextareaProps> = styled(Input)`
-  ${tw`min-h-20 leading-tight`}
-`
+export const Textarea = forwardRef<TextareaProps, 'textarea'>(
+  (props: TextareaProps, ref: React.Ref<HTMLTextAreaElement>) => {
+    const { className, ...rest } = props
+    const inputProps = useFormControl<HTMLTextAreaElement>(rest)
+    const field = useFormControlContext()
+    const group = useInputGroup()
+    const styles = useInputStyle()
 
-export const Textarea = forwardRef<TextareaProps, 'textarea'>((props, ref) => {
-  const { className, rows, ...rest } = props
-  const inputProps = useFormControl<HTMLTextAreaElement>(rest)
+    const variant = props.variant ?? group?.variant ?? 'standard'
+    const isDisabled = inputProps.disabled
+    const isReadOnly = props.isReadOnly ?? field?.isReadOnly
+    const isInvalid = props.isInvalid ?? field?.isInvalid
 
-  return (
-    // <Input
-    //   as="textarea"
-    //   ref={ref}
-    //   className={cx('Textarea', className)}
-    //   rows={rows}
-    //   {...inputProps}
-    // />
+    const inputStyle = [
+      styles.base,
+      styles.variants[variant],
+      isInvalid && styles.error,
+      isDisabled && styles.disabled,
+      isReadOnly && styles.readOnly
+    ]
 
-    // <StyledTextarea
-    //   as="textarea"
-    //   ref={ref}
-    //   className={cx('Textarea', className)}
-    //   rows={rows}
-    //   {...inputProps}
-    // />
-
-    <div>Hello</div>
-  )
-})
+    return (
+      <textarea
+        ref={ref}
+        className={cx('Textarea', props.className)}
+        css={inputStyle}
+        {...inputProps}
+      />
+    )
+  }
+)

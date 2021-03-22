@@ -1,3 +1,5 @@
+export const CheckboxGroup = () => {}
+
 // import React, { useMemo, ReactNode } from 'react'
 // import { SystemProps } from './system'
 // import { createContext } from './util'

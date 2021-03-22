@@ -1,3 +1,5 @@
+export const useCheckBoxGroup = () => {}
+
 // import { useState, useCallback, ChangeEvent } from 'react'
 // import { useControllableProp } from './hooks'
 // import { isInputEvent, addItem, removeItem, StringOrNumber, Dict } from './util'
