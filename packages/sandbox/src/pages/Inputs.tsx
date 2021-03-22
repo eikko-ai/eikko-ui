@@ -10,7 +10,8 @@ import {
   FormErrorMessage,
   FormHelperText,
   InputLeftAddon,
-  InputRightAddon
+  InputRightAddon,
+  Textarea
 } from '@kai/components'
 import {
   PaperAirplaneSolidIcon,
@@ -47,9 +48,7 @@ export const Inputs = () => {
         </Button>
       </div>
 
-      <Divider className="font-medium" intent="light">
-        ERRORS
-      </Divider>
+      <Divider className="font-medium" intent="light" />
 
       <div className="px-32 py-16 mx-auto max-w-7xl">
         <FormControl isRequired isDisabled>
@@ -93,23 +92,15 @@ export const Inputs = () => {
           </InputGroup>
         </FormControl>
 
-        <FormControl className="mt-8">
-          <FormLabel>City</FormLabel>
-          <InputGroup inputSize="xl">
-            <Input placeholder="Current city!" />
-            <InputLeftAddon>
-              <PaperAirplaneSolidIcon width="1.5rem" height="1.5rem" />
-            </InputLeftAddon>
-          </InputGroup>
-        </FormControl>
+        <Textarea className="mt-8" rows="12" />
+      </div>
 
-        <FormControl className="mt-8">
-          <FormLabel>City</FormLabel>
-          <InputGroup>
-            <Input placeholder="Current city!" />
-            <InputRightAddon>http://</InputRightAddon>
-          </InputGroup>
-        </FormControl>
+      <Divider className="font-medium" intent="light">
+        CHECKBOXES
+      </Divider>
+
+      <div className="px-32 mx-auto max-w-7xl">
+        <FormControl className="mt-8"></FormControl>
       </div>
     </div>
   )

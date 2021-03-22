@@ -380,7 +380,7 @@ const Component: Comp<'button', ButtonOptions> = styled.button(
   }
 )
 
-type ButtonProps = PropsOf<typeof Component> & {
+export type ButtonProps = PropsOf<typeof Component> & {
   /** The html button type to use. */
   type?: 'button' | 'reset' | 'submit'
 }

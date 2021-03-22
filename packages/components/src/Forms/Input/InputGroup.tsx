@@ -1,6 +1,6 @@
 import React, { useState, useCallback, cloneElement } from 'react'
 import 'twin.macro'
-import { cx, forwardRef, createContext } from '../util'
+import { cx, forwardRef, createContext } from '../../util'
 import { InputProps } from './Input'
 
 type BaseInputProps = Pick<InputProps, 'inputSize' | 'variant'>

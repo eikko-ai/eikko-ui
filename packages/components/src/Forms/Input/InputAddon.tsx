@@ -1,9 +1,9 @@
 import React from 'react'
-import tw, { css } from 'twin.macro'
-import { cx, forwardRef, CompProps } from '../util'
-import { useSafeLayoutEffect } from '../hooks'
+import tw from 'twin.macro'
+import { cx, forwardRef, CompProps } from '../../util'
+import { useSafeLayoutEffect } from '../../hooks'
 import { useInputGroup } from './InputGroup'
-import { useFormControlContext } from './FormControl'
+import { useFormControlContext } from '../FormControl'
 
 type Placement = 'left' | 'right'
 

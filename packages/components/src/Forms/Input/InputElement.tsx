@@ -1,10 +1,10 @@
 import React from 'react'
 import tw from 'twin.macro'
-import { cx, forwardRef, CompProps, omit } from '../util'
-import { useSafeLayoutEffect } from '../hooks'
+import { cx, forwardRef, CompProps, omit } from '../../util'
+import { useSafeLayoutEffect } from '../../hooks'
+import { useFormControlContext } from '../FormControl'
 import { InputOptions } from './Input'
 import { useInputGroup } from './InputGroup'
-import { useFormControlContext } from './FormControl'
 
 export interface InputElementOptions extends InputOptions {
   placement?: 'left' | 'right'
