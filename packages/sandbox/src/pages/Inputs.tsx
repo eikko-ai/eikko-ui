@@ -8,9 +8,16 @@ import {
   InputLeftElement,
   InputRightElement,
   FormErrorMessage,
-  FormHelperText
+  FormHelperText,
+  InputLeftAddon,
+  InputRightAddon
 } from '@kai/components'
-import { PaperAirplaneSolidIcon, MailSolidIcon, UserCircleIcon } from '@kai/icons'
+import {
+  PaperAirplaneSolidIcon,
+  MailSolidIcon,
+  UserCircleIcon,
+  LocationMarkerIcon
+} from '@kai/icons'
 
 export const Inputs = () => {
   return (
@@ -78,23 +85,29 @@ export const Inputs = () => {
           <FormErrorMessage>Small Password</FormErrorMessage>
         </FormControl>
 
-        <div className="mt-8">
-          <FormLabel>Last Name</FormLabel>
-          <Input name="lastName" placeholder="Last Name" isInvalid />
-        </div>
+        <FormControl className="mt-8">
+          <FormLabel>Location</FormLabel>
+          <InputGroup>
+            <Input placeholder="Current location yo!" />
+            <InputLeftAddon>http://</InputLeftAddon>
+          </InputGroup>
+        </FormControl>
 
-        <div className="mt-8">
-          <FormLabel>Read Only</FormLabel>
-          <Input name="readonly" placeholder="Read Only" defaultValue="admin@iki.ai" readOnly />
-        </div>
+        <FormControl className="mt-8">
+          <FormLabel>City</FormLabel>
+          <InputGroup inputSize="xl">
+            <Input placeholder="Current city!" />
+            <InputLeftAddon>
+              <PaperAirplaneSolidIcon width="1.5rem" height="1.5rem" />
+            </InputLeftAddon>
+          </InputGroup>
+        </FormControl>
 
-        <FormControl className="mt-8" isInvalid>
-          <FormLabel>Size</FormLabel>
-          <InputGroup inputSize="lg">
-            <Input name="size" placeholder="Size" />
-            <InputLeftElement>
-              <UserCircleIcon />
-            </InputLeftElement>
+        <FormControl className="mt-8">
+          <FormLabel>City</FormLabel>
+          <InputGroup>
+            <Input placeholder="Current city!" />
+            <InputRightAddon>http://</InputRightAddon>
           </InputGroup>
         </FormControl>
       </div>

@@ -90,7 +90,11 @@ export function useInputStyle(props?: InputProps) {
       md: tw`pr-12!`,
       lg: tw`pr-14!`,
       xl: tw`pr-16!`
-    }
+    },
+
+    leftAddon: tw`rounded-none! rounded-r-md! z-10`,
+
+    rightAddon: tw`rounded-none! rounded-l-md! z-10`
   }
 }
 
@@ -115,9 +119,9 @@ export const Input = React.forwardRef((props: InputProps, ref: React.Ref<HTMLInp
     isDisabled && styles.disabled,
     isReadOnly && styles.readOnly,
     group?.leftElement?.isMounted && styles.leftElement[size],
-    group?.rightElement?.isMounted && styles.rightElement[size]
-    // group?.leftAddon?.isMounted && styles.leftAddon,
-    // group?.rightAddon?.isMounted && styles.rightAddon,
+    group?.rightElement?.isMounted && styles.rightElement[size],
+    group?.leftAddon?.isMounted && styles.leftAddon,
+    group?.rightAddon?.isMounted && styles.rightAddon
   ]
 
   return (

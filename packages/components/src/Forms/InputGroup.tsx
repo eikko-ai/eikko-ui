@@ -56,18 +56,11 @@ export const InputGroup = forwardRef<InputGroupProps, 'div'>((props: InputGroupP
     return cloneElement(child, {
       inputSize: child.props.inputSize || context.inputSize,
       variant: child.props.variant || context.variant
-      // focusBorderColor: child.props.focusBorderColor || context.focusBorderColor,
-      // errorBorderColor: child.props.errorBorderColor || context.errorBorderColor,
     })
   })
 
   return (
-    <div
-      ref={ref}
-      className={cx('InputGroup', className)}
-      tw="w-full flex relative items-center"
-      {...htmlProps}
-    >
+    <div ref={ref} className={cx('InputGroup', className)} tw="w-full flex relative" {...htmlProps}>
       <InputGroupProvider value={context}>{content}</InputGroupProvider>
     </div>
   )
